@@ -8,6 +8,7 @@ import { TypographyP } from "@/components/shared/typography";
 import { QUERY_KEY } from "@/constants/query.const";
 import useDataTable from "@/hooks/use-data-table";
 import { useFetch } from "@/hooks/use-fetch";
+import { useEffect, useState } from "react";
 import { MyRequestsTableToolbar } from "./my-requests-table-toolbar";
 
 type MyRequestsTableProps = {
@@ -15,6 +16,12 @@ type MyRequestsTableProps = {
 };
 
 export default function MyRequestsTable({ queryString }: MyRequestsTableProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const { data, isLoading, isError, error } = useFetch({
     queryKey: [QUERY_KEY.REQUEST.MY_REQUEST, queryString],
     queryFn: () => getMyRequests(queryString),
@@ -27,8 +34,8 @@ export default function MyRequestsTable({ queryString }: MyRequestsTableProps) {
     columns: requestTableColumns,
   });
 
-  if (isLoading) {
-    return <TypographyP className="text-center">Loading...</TypographyP>;
+  if (!mounted || isLoading) {
+    return <TypographyP className="text-center py-10 opacity-50">Loading your requests...</TypographyP>;
   }
 
   if (isError || !data?.success) {
@@ -36,7 +43,7 @@ export default function MyRequestsTable({ queryString }: MyRequestsTableProps) {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 animate-in fade-in duration-500">
       <MyRequestsTableToolbar table={table} />
       <DataTable data={data} table={table} columns={requestTableColumns} />
     </div>
