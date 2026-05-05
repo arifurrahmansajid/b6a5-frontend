@@ -20,14 +20,14 @@ export default function SignUpForm() {
       schema={signUpSchema}
       mutationFn={signUpUser}
       submitButtonText="Create Account"
-      loadingMessage="Creating your account..."
+      loadingMessage="Creating account..."
       successMessage="Welcome to HopeLink!"
       errorMessage="Creation failed"
-      className="space-y-6"
+      className="space-y-4"
       onSuccess={() => router.push("/verify-email")}
     >
       {(form) => (
-        <FieldGroup className="space-y-6">
+        <FieldGroup className="space-y-4">
           <form.Field name="name">
             {(field) => (
               <div className="text-start">
@@ -35,9 +35,9 @@ export default function SignUpForm() {
                   field={field}
                   label="Full Name"
                   placeholder="John Doe"
-                  className="h-14 bg-background/20 border-white/10 focus:border-primary/50 focus:ring-primary/20 rounded-2xl transition-all"
+                  className="h-12 bg-background/20 border-white/10 focus:border-primary/50 focus:ring-primary/20 rounded-xl transition-all text-sm"
                   append={
-                    <User className="size-4 text-muted-foreground/50 mr-3" />
+                    <User className="size-3.5 text-muted-foreground/40 mr-3" />
                   }
                 />
               </div>
@@ -52,9 +52,9 @@ export default function SignUpForm() {
                   label="Email Address"
                   type="email"
                   placeholder="name@example.com"
-                  className="h-14 bg-background/20 border-white/10 focus:border-primary/50 focus:ring-primary/20 rounded-2xl transition-all"
+                  className="h-12 bg-background/20 border-white/10 focus:border-primary/50 focus:ring-primary/20 rounded-xl transition-all text-sm"
                   append={
-                    <Mail className="size-4 text-muted-foreground/50 mr-3" />
+                    <Mail className="size-3.5 text-muted-foreground/40 mr-3" />
                   }
                 />
               </div>
@@ -69,23 +69,23 @@ export default function SignUpForm() {
                   label="Password"
                   type={showPassword ? "text" : "password"}
                   placeholder="••••••••"
-                  className="h-14 bg-background/20 border-white/10 focus:border-primary/50 focus:ring-primary/20 rounded-2xl transition-all"
+                  className="h-12 bg-background/20 border-white/10 focus:border-primary/50 focus:ring-primary/20 rounded-xl transition-all text-sm"
                   append={
                     <div className="flex items-center">
                       <Button
                         size="icon"
                         type="button"
                         variant="ghost"
-                        className="hover:bg-transparent"
+                        className="hover:bg-transparent h-12 w-8"
                         onClick={() => setShowPassword((prev) => !prev)}
                       >
                         {showPassword ? (
-                          <EyeOff className="size-4 text-muted-foreground/50" />
+                          <EyeOff className="size-3.5 text-muted-foreground/40" />
                         ) : (
-                          <Eye className="size-4 text-muted-foreground/50" />
+                          <Eye className="size-3.5 text-muted-foreground/40" />
                         )}
                       </Button>
-                      <Lock className="size-4 text-muted-foreground/50 mr-3 ml-1" />
+                      <Lock className="size-3.5 text-muted-foreground/40 mr-3 ml-1" />
                     </div>
                   }
                 />
