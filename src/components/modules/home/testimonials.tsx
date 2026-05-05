@@ -5,14 +5,6 @@ import Image from "next/image";
 
 const testimonials = [
   {
-    name: "Abdul Rahman",
-    role: "Help Requester",
-    avatar: "https://mockmind-api.uifaces.co/content/human/12.jpg",
-    testimonial:
-      "I was going through a very difficult time, and I didn’t know where to turn. Through HopeLink, I received help within hours. It truly reminded me what community means.",
-    verified: true,
-  },
-  {
     name: "Fatima Noor",
     role: "Donor",
     avatar: "https://mockmind-api.uifaces.co/content/human/45.jpg",
@@ -26,14 +18,6 @@ const testimonials = [
     avatar: "https://mockmind-api.uifaces.co/content/human/33.jpg",
     testimonial:
       "Being able to physically help people in my area and track progress through the platform is an amazing experience.",
-    verified: true,
-  },
-  {
-    name: "Md. Fahad Hasan",
-    role: "Organization Manager",
-    avatar: "https://github.com/44fahadhasan.png",
-    testimonial:
-      "Managing volunteers and requests in one place has made our work so much more efficient and impactful.",
     verified: true,
   },
   {
@@ -72,11 +56,11 @@ export function Testimonials() {
           <TypographyMuted className="text-lg md:text-xl max-w-2xl mx-auto">
             Real stories from people who gave help, received support, and made a difference globally.
           </TypographyMuted>
-          
+
           <div className="pt-6 flex flex-wrap justify-center gap-6 opacity-60">
-             {["🤝 Community Driven", "🔐 Verified Users", "📊 Transparent Impact"].map((badge, i) => (
-               <span key={i} className="text-xs font-bold uppercase tracking-widest">{badge}</span>
-             ))}
+            {["🤝 Community Driven", "🔐 Verified Users", "📊 Transparent Impact"].map((badge, i) => (
+              <span key={i} className="text-xs font-bold uppercase tracking-widest">{badge}</span>
+            ))}
           </div>
         </div>
 
