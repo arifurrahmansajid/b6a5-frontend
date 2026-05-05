@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <div className="relative min-h-[90vh] flex items-center pt-20 pb-16 overflow-hidden">
+    <div className="relative min-h-[90vh] flex items-center pb-8 overflow-hidden">
       {/* Background Ambient Glow */}
       <div className="absolute top-0 right-0 -z-10 w-full h-full">
         <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary/20 blur-[120px] rounded-full animate-pulse" />
@@ -70,14 +70,14 @@ export function Hero() {
             </div>
             <div className="h-8 w-px bg-border/50" />
             <div className="flex -space-x-3 overflow-hidden">
-               {[1,2,3,4].map(i => (
-                 <div key={i} className="inline-block size-10 rounded-full ring-2 ring-background bg-muted overflow-hidden">
-                    <img src={`https://i.pravatar.cc/100?img=${i+10}`} alt="avatar" width={40} height={40} className="w-full h-full object-cover" />
-                 </div>
-               ))}
-               <div className="flex items-center justify-center size-10 rounded-full ring-2 ring-background bg-primary text-[10px] font-bold">
-                 +5k
-               </div>
+              {[1, 2, 3, 4].map(i => (
+                <div key={i} className="inline-block size-10 rounded-full ring-2 ring-background bg-muted overflow-hidden">
+                  <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="avatar" width={40} height={40} className="w-full h-full object-cover" />
+                </div>
+              ))}
+              <div className="flex items-center justify-center size-10 rounded-full ring-2 ring-background bg-primary text-[10px] font-bold">
+                +5k
+              </div>
             </div>
           </div>
         </div>
@@ -88,7 +88,7 @@ export function Hero() {
             {/* Glass Frame Decorative */}
             <div className="absolute inset-0 -m-4 rounded-[2rem] border border-primary/20 bg-primary/5 backdrop-blur-3xl -rotate-3 transition-transform group-hover:rotate-0 duration-500" />
             <div className="absolute inset-0 -m-4 rounded-[2rem] border border-emerald-500/20 bg-emerald-500/5 backdrop-blur-3xl rotate-3 transition-transform group-hover:rotate-0 duration-500 delay-75" />
-            
+
             {/* Main Image */}
             <div className="relative h-full w-full rounded-[1.5rem] overflow-hidden border-2 border-background shadow-2xl">
               <Image
@@ -99,7 +99,7 @@ export function Hero() {
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              
+
               {/* Floating Card */}
               <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-background/80 backdrop-blur-md border border-white/10 shadow-lg">
                 <div className="flex items-center gap-3">

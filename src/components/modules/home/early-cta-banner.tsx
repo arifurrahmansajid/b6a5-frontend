@@ -4,12 +4,12 @@ import Link from "next/link";
 
 export function EarlyCtaBanner() {
   return (
-    <div className="py-32 px-6 relative overflow-hidden">
+    <div className="px-6 relative overflow-hidden">
       {/* Cinematic Background Elements */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[800px] bg-primary/5 rounded-full blur-[120px] -z-10" />
-      
+
       <div className="max-w-4xl mx-auto text-center space-y-12 relative z-10 animate-in fade-in slide-in-from-bottom-12 duration-1000">
-        
+
         {/* Trust Badge */}
         <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-md">
           <ShieldCheck className="size-4 text-primary" />
@@ -36,16 +36,16 @@ export function EarlyCtaBanner() {
               <Sparkles className="size-4 md:size-5 group-hover:rotate-12 transition-transform" />
               Join HopeLink Today
               <ArrowRight className="size-4 md:size-5 group-hover:translate-x-2 transition-transform" />
-              
+
               {/* Button Shine Effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shine" />
             </Link>
           </Button>
-          
+
           <div className="mt-8 flex items-center justify-center gap-8 opacity-40 grayscale">
-             {["100% Transparent", "Global Reach", "Secure Platform"].map((feat, i) => (
-               <span key={i} className="text-[10px] font-bold uppercase tracking-widest">{feat}</span>
-             ))}
+            {["100% Transparent", "Global Reach", "Secure Platform"].map((feat, i) => (
+              <span key={i} className="text-[10px] font-bold uppercase tracking-widest">{feat}</span>
+            ))}
           </div>
         </div>
       </div>
