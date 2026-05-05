@@ -7,6 +7,7 @@ import { TypographyP } from "@/components/shared/typography";
 import { QUERY_KEY } from "@/constants/query.const";
 import useDataTable from "@/hooks/use-data-table";
 import { useFetch } from "@/hooks/use-fetch";
+import { useEffect, useState } from "react";
 import { allUsersTableColumns } from "./all-users-table-columns";
 import { AllUsersTableToolbar } from "./all-users-table-toolbar";
 
@@ -15,6 +16,12 @@ type AllUsersTableProps = {
 };
 
 export default function AllUsersTable({ queryString }: AllUsersTableProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const { data, isLoading, isError, error } = useFetch({
     queryKey: [QUERY_KEY.USER.ALL_USERS, queryString],
     queryFn: () => getAllUsers(queryString),
@@ -27,8 +34,8 @@ export default function AllUsersTable({ queryString }: AllUsersTableProps) {
     columns: allUsersTableColumns,
   });
 
-  if (isLoading) {
-    return <TypographyP className="text-center">Loading...</TypographyP>;
+  if (!mounted || isLoading) {
+    return <TypographyP className="text-center py-10 opacity-50">Loading community members...</TypographyP>;
   }
 
   if (isError || !data?.success) {
@@ -36,7 +43,7 @@ export default function AllUsersTable({ queryString }: AllUsersTableProps) {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 animate-in fade-in duration-500">
       <AllUsersTableToolbar table={table} />
       <DataTable data={data} table={table} columns={allUsersTableColumns} />
     </div>
