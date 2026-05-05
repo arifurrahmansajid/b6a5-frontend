@@ -36,7 +36,7 @@ export function Hero() {
             className="text-lg md:text-xl max-w-xl mb-10 text-pretty
                        animate-in fade-in slide-in-from-left-16 duration-1000 delay-200 fill-mode-backwards"
           >
-            Empowering the Ummah through seamless support. Post help requests, contribute your wealth, or gift your time to make a real-world impact.
+            Empowering the global community through seamless support. Post help requests, contribute your wealth, or gift your time to make a real-world impact.
           </TypographyMuted>
 
           <div

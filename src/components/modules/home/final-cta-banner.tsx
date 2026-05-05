@@ -37,8 +37,8 @@ export function FinalCtaBanner({
         </div>
         
         <TypographyH1 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight">
-          Grow Your <span className="text-primary underline decoration-primary/30 underline-offset-8">Akhirat</span> <br />
-          by Serving the HopeLink
+          Grow Your <span className="text-primary underline decoration-primary/30 underline-offset-8">Legacy</span> <br />
+          by Serving with HopeLink
         </TypographyH1>
         
         <TypographyBlockquote className="mt-8 text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto border-none italic">
