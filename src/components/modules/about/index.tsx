@@ -147,77 +147,42 @@ export default function About() {
           </div>
         </div>
 
-        {/* <div className="max-w-4xl mx-auto mt-20 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-500">
-          <div className="relative group p-1 rounded-[3rem] bg-gradient-to-br from-primary/20 via-border to-primary/10 overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 bg-background/80 backdrop-blur-3xl rounded-[2.9rem] -z-10 transition-colors group-hover:bg-background/90" />
-            <div className="relative px-8 py-16 md:p-20 text-center">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary mb-8">
-                <MessageSquare className="size-4" />
-                <span className="text-[10px] font-bold tracking-widest uppercase">Get in Touch</span>
-              </div>
-
-              <TypographyH2 className="text-4xl md:text-6xl font-black mb-8 tracking-tight">
-                Global <span className="text-primary">Collaboration</span>
-              </TypographyH2>
-
-              <TypographyP className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-12">
-                We welcome partnerships with international organizations, community centers, and global leaders. Whether you have feedback, collaboration ideas, or need support, our team is ready to connect.
-              </TypographyP>
-
-              <div className="flex flex-col items-center gap-6">
-                <p className="text-sm font-bold uppercase tracking-[0.3em] text-muted-foreground">Reach out directly at</p>
-                <a
-                  href="mailto:support@hopelink.com"
-                  className="relative group/btn inline-flex items-center gap-4 px-10 py-5 rounded-2xl bg-primary text-primary-foreground font-black text-xl md:text-2xl transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/40"
-                >
-                  <MessageSquare className="size-6 group-hover/btn:animate-bounce" />
-                  support@hopelink.com
-                </a>
-                <TypographyMuted className="mt-4 italic">
-                  Average response time: &lt; 24 hours
-                </TypographyMuted>
-              </div>
-            </div>
-          </div>
-        </div> */}
-
-        <div className="max-w-2xl mx-auto mt-12 px-4 animate-in fade-in slide-in-from-bottom-8 duration-700">
-          <div className="relative group overflow-hidden rounded-3xl border border-border bg-card p-8 transition-all hover:border-primary/50 hover:shadow-lg">
+        <div className="max-w-5xl mx-auto mt-12 px-4 animate-in fade-in slide-in-from-bottom-8 duration-700">
+          <div className="relative group overflow-hidden rounded-[2.5rem] border border-border/50 bg-card p-10 md:p-16 transition-all hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/5">
 
             {/* Subtle decorative glow */}
-            <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/5 blur-[80px] group-hover:bg-primary/10 transition-colors" />
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 blur-[100px] group-hover:bg-primary/10 transition-colors" />
 
-            <div className="flex flex-col md:flex-row items-center gap-8 text-left">
+            <div className="flex flex-col md:flex-row items-center gap-12 text-left">
 
               {/* Content Section */}
-              <div className="flex-1 space-y-3">
-                <div className="inline-flex items-center gap-2 text-primary font-semibold text-xs tracking-wider uppercase">
-                  <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                  Partnerships
+              <div className="flex-1 space-y-5">
+                <div className="inline-flex items-center gap-2 text-primary font-bold text-xs tracking-[0.2em] uppercase">
+                  <span className="size-2 rounded-full bg-primary animate-pulse" />
+                  Global Partnerships
                 </div>
 
-                <h3 className="text-2xl font-bold tracking-tight text-foreground">
+                <h3 className="text-4xl md:text-5xl font-black tracking-tight text-foreground leading-tight">
                   Global <span className="text-primary">Collaboration</span>
                 </h3>
 
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Open for partnerships with international orgs and leaders.
-                  Let's connect and build something meaningful together.
+                <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                  We are open for strategic partnerships with international organizations, community centers, and global leaders. Let's connect and build a legacy of impact together.
                 </p>
               </div>
 
               {/* Action Section */}
-              <div className="shrink-0">
+              <div className="shrink-0 flex flex-col items-center gap-4">
                 <a
                   href="mailto:support@hopelink.com"
-                  className="flex items-center gap-2 px-6 py-3 rounded-xl bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group/link"
+                  className="flex items-center gap-4 px-10 py-5 rounded-2xl bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 group/link shadow-xl shadow-primary/20 hover:scale-105"
                 >
-                  <MessageSquare className="size-4" />
-                  <span className="text-sm font-bold">Email Us</span>
-                  <ArrowRight className="size-4 -rotate-45 group-hover/link:rotate-0 transition-transform" />
+                  <MessageSquare className="size-6" />
+                  <span className="text-lg font-black tracking-tight">Email Us</span>
+                  <ArrowRight className="size-5 -rotate-45 group-hover/link:rotate-0 transition-transform" />
                 </a>
-                <p className="mt-2 text-[10px] text-center text-muted-foreground uppercase tracking-tighter">
-                  Response &lt; 24h
+                <p className="text-xs text-muted-foreground uppercase tracking-widest font-bold opacity-60">
+                  Response within 24h
                 </p>
               </div>
 
