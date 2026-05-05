@@ -2,13 +2,12 @@
 
 import { signInUser } from "@/actions/auth-actions";
 import AppInputField from "@/components/shared/form/app-input-field ";
-import AppSubmitButton from "@/components/shared/form/app-submit-button";
 import { TypographySmall } from "@/components/shared/typography";
 import { Button } from "@/components/ui/button";
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
 import { useForm } from "@tanstack/react-form";
 import { useMutation } from "@tanstack/react-query";
-import { Eye, EyeOff } from "lucide-react";
+import { Eye, EyeOff, Lock, Mail } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -21,7 +20,6 @@ interface SignInFromProps {
 
 export default function SignInForm({ redirectPath }: SignInFromProps) {
   const [showPassword, setShowPassword] = useState<boolean>(false);
-
   const router = useRouter();
 
   const { mutateAsync, isPending } = useMutation({
@@ -83,56 +81,66 @@ export default function SignInForm({ redirectPath }: SignInFromProps) {
         e.stopPropagation();
         form.handleSubmit();
       }}
-      className="space-y-5 pt-8"
+      className="space-y-4"
     >
-      <FieldGroup>
+      <FieldGroup className="space-y-4">
         <form.Field name="email">
           {(field) => (
-            <AppInputField
-              field={field}
-              label="Email"
-              type="email"
-              aria-label="Email address"
-              placeholder="Enter your email address"
-            />
+            <div className="text-start">
+              <AppInputField
+                field={field}
+                label="Email Address"
+                type="email"
+                placeholder="name@example.com"
+                className="h-12 bg-background/20 border-white/10 focus:border-primary/50 focus:ring-primary/20 rounded-xl transition-all text-sm"
+                append={
+                  <Mail className="size-3.5 text-muted-foreground/40 mr-3" />
+                }
+              />
+            </div>
           )}
         </form.Field>
 
         <Field>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between mb-1">
             <FieldLabel htmlFor="password">Password</FieldLabel>
-            <TypographySmall className="text-xs">
+            <TypographySmall className="text-[10px] font-bold uppercase tracking-wider">
               <Link
                 href="/forgot-password"
-                className="font-normal underline-offset-4 hover:underline"
+                className="text-primary hover:text-primary/80 transition-colors"
               >
-                Forgot your password?
+                Forgot?
               </Link>
             </TypographySmall>
           </div>
           <form.Field name="password">
             {(field) => (
-              <AppInputField
-                field={field}
-                type={showPassword ? "text" : "password"}
-                placeholder="Enter your password"
-                aria-label={showPassword ? "Hide password" : "Show password"}
-                append={
-                  <Button
-                    size="icon"
-                    type="button"
-                    variant="ghost"
-                    aria-pressed={showPassword}
-                    onClick={() => setShowPassword((prev) => !prev)}
-                  >
-                    {showPassword ? (
-                      <EyeOff className="size-4" aria-hidden="true" />
-                    ) : (
-                      <Eye className="size-4" aria-hidden="true" />
-                    )}
-                  </Button>
-                }
-              />
+              <div className="text-start">
+                <AppInputField
+                  field={field}
+                  type={showPassword ? "text" : "password"}
+                  placeholder="••••••••"
+                  className="h-12 bg-background/20 border-white/10 focus:border-primary/50 focus:ring-primary/20 rounded-xl transition-all text-sm"
+                  append={
+                    <div className="flex items-center">
+                      <Button
+                        size="icon"
+                        type="button"
+                        variant="ghost"
+                        className="hover:bg-transparent h-12 w-8"
+                        onClick={() => setShowPassword((prev) => !prev)}
+                      >
+                        {showPassword ? (
+                          <EyeOff className="size-3.5 text-muted-foreground/40" />
+                        ) : (
+                          <Eye className="size-3.5 text-muted-foreground/40" />
+                        )}
+                      </Button>
+                      <Lock className="size-3.5 text-muted-foreground/40 mr-3 ml-1" />
+                    </div>
+                  }
+                />
+              </div>
             )}
           </form.Field>
         </Field>
@@ -140,13 +148,13 @@ export default function SignInForm({ redirectPath }: SignInFromProps) {
 
       <form.Subscribe selector={(s) => [s.canSubmit, s.isSubmitting]}>
         {([canSubmit, isSubmitting]) => (
-          <AppSubmitButton
-            disabled={!canSubmit}
-            pendingLabel="Please wait...."
-            isPending={isPending || isSubmitting}
+          <Button
+            type="submit"
+            disabled={!canSubmit || isPending || isSubmitting}
+            className="w-full h-12 rounded-xl font-bold mt-4 shadow-xl shadow-primary/20 transition-all active:scale-[0.98]"
           >
-            Sign In
-          </AppSubmitButton>
+            {isPending || isSubmitting ? "Signing in..." : "Sign In"}
+          </Button>
         )}
       </form.Subscribe>
     </form>

@@ -1,52 +1,64 @@
-import {
-  TypographyH4,
-  TypographyMuted,
-  TypographyP,
-} from "@/components/shared/typography";
-import { FullWidthDivider } from "@/components/ui/full-width-divider";
+import { TypographyMuted } from "@/components/shared/typography";
+import { ShieldCheck, Sparkles } from "lucide-react";
 import Link from "next/link";
 import VerifyEmailForm from "./verify-email-form";
 
 export default function VerifyEmail() {
   return (
-    <div className="space-y-6 w-full max-w-sm mx-auto border-x border-dashed *:px-6">
-      <div className="space-y-1">
-        <TypographyH4>Verify your email</TypographyH4>
-        <TypographyP className="text-muted-foreground not-first:mt-0">
-          Enter the OTP sent to your inbox to complete account verification.
-        </TypographyP>
+    <div className="relative min-h-screen flex items-center justify-center py-12 px-6 overflow-hidden">
+      {/* Cinematic Background Image & Overlay */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat opacity-40"
+        style={{ backgroundImage: `url('/hope_link_auth_bg_1777964018455.png')` }}
+      />
+      <div className="absolute inset-0 z-0 bg-black/80 backdrop-blur-md" />
+      
+      {/* Subtle Ambient Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[600px] bg-primary/10 blur-[100px] rounded-full z-0" />
+
+      <div className="relative z-10 w-full max-w-lg">
+        <div className="group relative p-px rounded-[2rem] bg-gradient-to-b from-white/20 to-transparent backdrop-blur-3xl shadow-2xl overflow-hidden">
+          {/* Inner Content Card */}
+          <div className="bg-card/90 rounded-[1.95rem] px-8 py-10 md:px-12 md:py-14 border border-white/10 flex flex-col items-center text-center">
+            
+            <div className="space-y-4 mb-8">
+              <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-primary/10 border border-primary/20 text-primary">
+                <Sparkles className="size-3" />
+                <span className="text-[9px] font-bold tracking-[0.2em] uppercase">Verification Hub</span>
+              </div>
+              
+              <h1 className="text-3xl md:text-4xl font-black tracking-tighter">
+                Finalize your <span className="text-primary underline underline-offset-4 decoration-primary/20">Identity</span>
+              </h1>
+              
+              <TypographyMuted className="text-sm md:text-base leading-relaxed opacity-80">
+                Enter the secure code sent to your inbox to activate your HopeLink account.
+              </TypographyMuted>
+            </div>
+
+            <div className="w-full space-y-6">
+              <VerifyEmailForm />
+              
+              <div className="pt-6 border-t border-border/50">
+                <TypographyMuted className="text-xs">
+                  Already activated?{" "}
+                  <Link
+                    className="font-bold text-foreground hover:text-primary transition-colors underline underline-offset-4"
+                    href="/sign-in"
+                  >
+                    Sign in here
+                  </Link>
+                </TypographyMuted>
+              </div>
+            </div>
+
+            <div className="mt-8 flex items-center justify-center gap-1.5 text-[9px] font-bold uppercase tracking-widest text-muted-foreground opacity-50">
+              <ShieldCheck className="size-3" />
+              <span>Identity Verification Protocol</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <FullWidthDivider contained />
-        <VerifyEmailForm />
-        <TypographyMuted className="text-center pt-4 pb-8">
-          Already verified?{" "}
-          <Link
-            className="underline underline-offset-4 hover:text-primary"
-            href="/sign-in"
-          >
-            Sign in
-          </Link>
-        </TypographyMuted>
-        <FullWidthDivider contained />
-      </div>
-      <TypographyMuted className="text-center">
-        By clicking continue, you agree to our
-        <Link
-          className="underline underline-offset-4 hover:text-primary"
-          href="/privacy-policy"
-        >
-          Privacy Policy
-        </Link>{" "}
-        and{" "}
-        <Link
-          className="underline underline-offset-4 hover:text-primary"
-          href="/terms-of-service"
-        >
-          Terms of Service{" "}
-        </Link>
-        apply.
-      </TypographyMuted>
     </div>
   );
 }
