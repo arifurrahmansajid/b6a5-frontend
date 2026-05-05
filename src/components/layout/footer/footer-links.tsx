@@ -4,15 +4,15 @@ export const navLinks = [
     href: "/about",
   },
   {
-    label: "Privacy Policy",
-    href: "/privacy-policy",
+    label: "How it works",
+    href: "/#how-it-works",
   },
   {
-    label: "Terms Of Service",
-    href: "/terms-of-service",
+    label: "Our Mission",
+    href: "/about#mission",
   },
   {
-    label: "Contact Us",
-    href: "/contact",
+    label: "Success Stories",
+    href: "/stories",
   },
 ];

@@ -1,6 +1,6 @@
 import { TypographyH1, TypographyMuted } from "@/components/shared/typography";
 import { Button } from "@/components/ui/button";
-import { ArrowRightIcon, HeartHandshakeIcon, SparklesIcon } from "lucide-react";
+import { ArrowRight, HeartHandshake, Sparkles } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -18,7 +18,7 @@ export function Hero() {
         <div className="flex flex-col items-start text-left z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary mb-8 
                           animate-in fade-in slide-in-from-left-8 duration-700">
-            <SparklesIcon className="size-4 animate-spin-slow" />
+            <Sparkles className="size-4 animate-spin-slow" />
             <span className="text-xs font-bold tracking-widest uppercase">HopeLink Community</span>
           </div>
 
@@ -46,12 +46,12 @@ export function Hero() {
             <Button size="lg" className="h-14 px-8 text-base font-bold group rounded-2xl shadow-xl shadow-primary/20" asChild>
               <Link href="/dashboard/my-requests">
                 Post a Help Request
-                <ArrowRightIcon className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
+                <ArrowRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>
             <Button variant="outline" size="lg" className="h-14 px-8 text-base font-bold rounded-2xl backdrop-blur-md bg-background/30 hover:bg-primary/5 transition-all" asChild>
               <Link href="/volunteer/dashboard" className="flex items-center gap-2">
-                <HeartHandshakeIcon className="size-5 text-primary" />
+                <HeartHandshake className="size-5 text-primary" />
                 Volunteer Now
               </Link>
             </Button>
@@ -104,7 +104,7 @@ export function Hero() {
               <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-background/80 backdrop-blur-md border border-white/10 shadow-lg">
                 <div className="flex items-center gap-3">
                   <div className="size-10 rounded-full bg-primary/20 flex items-center justify-center">
-                    <HeartHandshakeIcon className="size-5 text-primary" />
+                    <HeartHandshake className="size-5 text-primary" />
                   </div>
                   <div>
                     <p className="text-xs font-bold">New Help Request</p>

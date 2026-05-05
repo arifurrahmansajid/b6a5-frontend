@@ -7,7 +7,7 @@ import {
   TypographyP,
 } from "@/components/shared/typography";
 import { Button } from "@/components/ui/button";
-import { GlobeIcon, HeartIcon, ShieldCheckIcon, ZapIcon } from "lucide-react";
+import { Globe, Heart, ShieldCheck, Zap } from "lucide-react";
 import Link from "next/link";
 
 export default function About() {
@@ -47,7 +47,7 @@ export default function About() {
             <div className="flex flex-wrap gap-6 mb-16 animate-in fade-in slide-in-from-left-16 duration-1000 delay-300">
               <Button size="lg" className="h-14 px-8 rounded-full font-bold bg-primary text-primary-foreground hover:bg-primary/90 transition-all shadow-xl shadow-primary/20" asChild>
                 <Link href="/sign-up">
-                  <ZapIcon className="mr-2 size-5 fill-current" />
+                  <Zap className="mr-2 size-5 fill-current" />
                   Start Making a Difference
                 </Link>
               </Button>
@@ -69,9 +69,9 @@ export default function About() {
           {/* Right Side: Impact Cards */}
           <div className="lg:col-span-4 flex flex-col gap-4 animate-in fade-in slide-in-from-right-8 duration-1000 delay-300">
             {[
-              { val: "120+", label: "Countries Reached", icon: GlobeIcon },
-              { val: "50K+", label: "Lives Impacted", icon: HeartIcon },
-              { val: "98%", label: "Aid Delivered", icon: ShieldCheckIcon }
+              { val: "120+", label: "Countries Reached", icon: Globe },
+              { val: "50K+", label: "Lives Impacted", icon: Heart },
+              { val: "98%", label: "Aid Delivered", icon: ShieldCheck }
             ].map((stat, i) => (
               <div key={i} className="group p-6 rounded-2xl bg-card border border-border/50 shadow-lg hover:border-primary/30 transition-all hover:bg-primary/5">
                 <div className="flex items-center justify-between">
@@ -92,7 +92,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-32">
           <div className="group p-8 md:p-12 rounded-[2.5rem] bg-card border border-border/50 shadow-2xl transition-all hover:border-primary/30 hover:shadow-primary/5">
             <div className="size-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-              <HeartIcon className="size-8 text-primary" />
+              <Heart className="size-8 text-primary" />
             </div>
             <TypographyH2 className="text-3xl md:text-4xl font-bold mb-6">
               Our Vision
@@ -104,7 +104,7 @@ export default function About() {
 
           <div className="group p-8 md:p-12 rounded-[2.5rem] bg-secondary/30 backdrop-blur-sm border border-border/50 shadow-2xl transition-all hover:border-primary/30 hover:shadow-primary/5">
             <div className="size-16 rounded-2xl bg-emerald-500/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-              <ZapIcon className="size-8 text-emerald-500" />
+              <Zap className="size-8 text-emerald-500" />
             </div>
             <TypographyH2 className="text-3xl md:text-4xl font-bold mb-6">
               What Makes Us Unique?
@@ -117,7 +117,7 @@ export default function About() {
                 "Structured response management for efficient aid delivery"
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-lg text-muted-foreground">
-                  <ShieldCheckIcon className="size-6 text-primary shrink-0 mt-0.5" />
+                  <ShieldCheck className="size-6 text-primary shrink-0 mt-0.5" />
                   {item}
                 </li>
               ))}
