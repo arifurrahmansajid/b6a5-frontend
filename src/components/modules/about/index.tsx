@@ -7,7 +7,7 @@ import {
   TypographyP,
 } from "@/components/shared/typography";
 import { Button } from "@/components/ui/button";
-import { Globe, Heart, Mail, ShieldCheck, Zap } from "lucide-react";
+import { Globe, Heart, MessageSquare, ShieldCheck, Zap } from "lucide-react";
 import Link from "next/link";
 
 export default function About() {
@@ -152,7 +152,7 @@ export default function About() {
             <div className="absolute inset-0 bg-background/80 backdrop-blur-3xl rounded-[2.9rem] -z-10 transition-colors group-hover:bg-background/90" />
             <div className="relative px-8 py-16 md:p-20 text-center">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary mb-8">
-                 <Mail className="size-4" />
+                 <MessageSquare className="size-4" />
                  <span className="text-[10px] font-bold tracking-widest uppercase">Get in Touch</span>
               </div>
               
@@ -170,7 +170,7 @@ export default function About() {
                   href="mailto:support@hopelink.com"
                   className="relative group/btn inline-flex items-center gap-4 px-10 py-5 rounded-2xl bg-primary text-primary-foreground font-black text-xl md:text-2xl transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/40"
                 >
-                  <Mail className="size-6 group-hover/btn:animate-bounce" />
+                  <MessageSquare className="size-6 group-hover/btn:animate-bounce" />
                   support@hopelink.com
                 </a>
                 <TypographyMuted className="mt-4 italic">
