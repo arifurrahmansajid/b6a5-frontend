@@ -7,7 +7,7 @@ import {
   TypographyP,
 } from "@/components/shared/typography";
 import { Button } from "@/components/ui/button";
-import { Globe, Heart, MessageSquare, ShieldCheck, Zap } from "lucide-react";
+import { ArrowRight, Globe, Heart, MessageSquare, ShieldCheck, Zap } from "lucide-react";
 import Link from "next/link";
 
 export default function About() {
@@ -147,7 +147,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto mt-20 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-500">
+        {/* <div className="max-w-4xl mx-auto mt-20 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-500">
           <div className="relative group p-1 rounded-[3rem] bg-gradient-to-br from-primary/20 via-border to-primary/10 overflow-hidden shadow-2xl">
             <div className="absolute inset-0 bg-background/80 backdrop-blur-3xl rounded-[2.9rem] -z-10 transition-colors group-hover:bg-background/90" />
             <div className="relative px-8 py-16 md:p-20 text-center">
@@ -179,7 +179,7 @@ export default function About() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="max-w-2xl mx-auto mt-12 px-4 animate-in fade-in slide-in-from-bottom-8 duration-700">
           <div className="relative group overflow-hidden rounded-3xl border border-border bg-card p-8 transition-all hover:border-primary/50 hover:shadow-lg">
@@ -212,7 +212,7 @@ export default function About() {
                   href="mailto:support@hopelink.com"
                   className="flex items-center gap-2 px-6 py-3 rounded-xl bg-secondary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group/link"
                 >
-                  <Mail className="size-4" />
+                  <MessageSquare className="size-4" />
                   <span className="text-sm font-bold">Email Us</span>
                   <ArrowRight className="size-4 -rotate-45 group-hover/link:rotate-0 transition-transform" />
                 </a>
