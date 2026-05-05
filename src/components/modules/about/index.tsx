@@ -14,13 +14,13 @@ export default function About() {
   return (
     <div className="bg-background text-foreground overflow-hidden">
       {/* About Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center pt-20 pb-16 px-6 max-w-7xl mx-auto">
+      <section className="relative min-h-[65vh] flex items-center pb-16 px-6 max-w-7xl mx-auto">
         {/* Background Grid & Glow */}
         <div className="absolute inset-0 z-0 pointer-events-none opacity-20"
-             style={{
-               backgroundImage: `radial-gradient(circle at 2px 2px, var(--border) 1px, transparent 0)`,
-               backgroundSize: '40px 40px'
-             }}
+          style={{
+            backgroundImage: `radial-gradient(circle at 2px 2px, var(--border) 1px, transparent 0)`,
+            backgroundSize: '40px 40px'
+          }}
         />
         <div className="absolute top-0 right-0 size-[600px] bg-primary/10 blur-[120px] rounded-full -z-10 animate-pulse" />
 
@@ -37,7 +37,7 @@ export default function About() {
             <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-[0.9] mb-10 
                            animate-in fade-in slide-in-from-left-8 duration-700">
               About <br />
-              <span className="text-primary italic">HopeLink</span>
+              <span className="text-primary">HopeLink</span>
             </h1>
 
             <TypographyLead className="max-w-2xl text-lg md:text-xl text-muted-foreground mb-12 leading-relaxed animate-in fade-in slide-in-from-left-12 duration-1000 delay-200">
@@ -46,43 +46,43 @@ export default function About() {
 
             <div className="flex flex-wrap gap-6 mb-16 animate-in fade-in slide-in-from-left-16 duration-1000 delay-300">
               <Button size="lg" className="h-14 px-8 rounded-full font-bold bg-primary text-primary-foreground hover:bg-primary/90 transition-all shadow-xl shadow-primary/20" asChild>
-                 <Link href="/sign-up">
-                   <ZapIcon className="mr-2 size-5 fill-current" />
-                   Start Making a Difference
-                 </Link>
+                <Link href="/sign-up">
+                  <ZapIcon className="mr-2 size-5 fill-current" />
+                  Start Making a Difference
+                </Link>
               </Button>
               <Button variant="outline" size="lg" className="h-14 px-8 rounded-full font-bold border-border bg-transparent hover:bg-white/5 transition-all" asChild>
-                 <Link href="#how-it-works">Learn how it works</Link>
+                <Link href="#how-it-works">Learn how it works</Link>
               </Button>
             </div>
 
             {/* Bottom Tags */}
             <div className="flex flex-wrap gap-3 opacity-60 grayscale hover:grayscale-0 transition-all duration-500 animate-in fade-in duration-1000 delay-500">
-               {["Verified Network", "Secure Messaging", "Real-time Aid", "Transparent Impact"].map(tag => (
-                 <span key={tag} className="px-3 py-1 rounded-full border border-border text-[10px] font-bold uppercase tracking-wider">
-                   {tag}
-                 </span>
-               ))}
+              {["Verified Network", "Secure Messaging", "Real-time Aid", "Transparent Impact"].map(tag => (
+                <span key={tag} className="px-3 py-1 rounded-full border border-border text-[10px] font-bold uppercase tracking-wider">
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
 
           {/* Right Side: Impact Cards */}
           <div className="lg:col-span-4 flex flex-col gap-4 animate-in fade-in slide-in-from-right-8 duration-1000 delay-300">
-             {[
-               { val: "120+", label: "Countries Reached", icon: GlobeIcon },
-               { val: "50K+", label: "Lives Impacted", icon: HeartIcon },
-               { val: "98%", label: "Aid Delivered", icon: ShieldCheckIcon }
-             ].map((stat, i) => (
-               <div key={i} className="group p-6 rounded-2xl bg-card border border-border/50 shadow-lg hover:border-primary/30 transition-all hover:bg-primary/5">
-                  <div className="flex items-center justify-between">
-                    <div className="flex flex-col">
-                      <span className="text-4xl font-black text-primary group-hover:scale-110 transition-transform origin-left">{stat.val}</span>
-                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground mt-1">{stat.label}</span>
-                    </div>
-                    <stat.icon className="size-8 text-primary opacity-20 group-hover:opacity-100 transition-opacity" />
+            {[
+              { val: "120+", label: "Countries Reached", icon: GlobeIcon },
+              { val: "50K+", label: "Lives Impacted", icon: HeartIcon },
+              { val: "98%", label: "Aid Delivered", icon: ShieldCheckIcon }
+            ].map((stat, i) => (
+              <div key={i} className="group p-6 rounded-2xl bg-card border border-border/50 shadow-lg hover:border-primary/30 transition-all hover:bg-primary/5">
+                <div className="flex items-center justify-between">
+                  <div className="flex flex-col">
+                    <span className="text-4xl font-black text-primary group-hover:scale-110 transition-transform origin-left">{stat.val}</span>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground mt-1">{stat.label}</span>
                   </div>
-               </div>
-             ))}
+                  <stat.icon className="size-8 text-primary opacity-20 group-hover:opacity-100 transition-opacity" />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -110,17 +110,17 @@ export default function About() {
               What Makes Us Unique?
             </TypographyH2>
             <ul className="space-y-4">
-               {[
-                 "Verified global network with transparent impact tracking",
-                 "Real-time secure messaging and coordination",
-                 "Advanced role-based ecosystem for specialized support",
-                 "Structured response management for efficient aid delivery"
-               ].map((item, i) => (
-                 <li key={i} className="flex items-start gap-3 text-lg text-muted-foreground">
-                   <ShieldCheckIcon className="size-6 text-primary shrink-0 mt-0.5" />
-                   {item}
-                 </li>
-               ))}
+              {[
+                "Verified global network with transparent impact tracking",
+                "Real-time secure messaging and coordination",
+                "Advanced role-based ecosystem for specialized support",
+                "Structured response management for efficient aid delivery"
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3 text-lg text-muted-foreground">
+                  <ShieldCheckIcon className="size-6 text-primary shrink-0 mt-0.5" />
+                  {item}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
