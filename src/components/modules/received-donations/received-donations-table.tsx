@@ -7,6 +7,7 @@ import { TypographyP } from "@/components/shared/typography";
 import { QUERY_KEY } from "@/constants/query.const";
 import useDataTable from "@/hooks/use-data-table";
 import { useFetch } from "@/hooks/use-fetch";
+import { useEffect, useState } from "react";
 import { donationTableColumns } from "./received-donations-table-columns";
 import { ReceivedDonationsTableToolbar } from "./received-donations-table-toolbar";
 
@@ -17,6 +18,12 @@ type ReceivedDonationsTableProps = {
 export default function ReceivedDonationsTable({
   queryString,
 }: ReceivedDonationsTableProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const { data, isLoading, isError, error } = useFetch({
     queryKey: [QUERY_KEY.DONATION.RECEIVED_DONATIONS, queryString],
     queryFn: () => getReceivedDonations(queryString),
@@ -29,8 +36,8 @@ export default function ReceivedDonationsTable({
     columns: donationTableColumns,
   });
 
-  if (isLoading) {
-    return <TypographyP className="text-center">Loading...</TypographyP>;
+  if (!mounted || isLoading) {
+    return <TypographyP className="text-center py-10 opacity-50">Loading received donations...</TypographyP>;
   }
 
   if (isError || !data?.success) {
@@ -38,7 +45,7 @@ export default function ReceivedDonationsTable({
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 animate-in fade-in duration-500">
       <ReceivedDonationsTableToolbar table={table} />
       <DataTable data={data} table={table} columns={donationTableColumns} />
     </div>

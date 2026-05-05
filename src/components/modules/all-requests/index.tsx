@@ -1,8 +1,9 @@
 import { getAllRequests } from "@/actions/request.action";
-import { TypographyH3, TypographyMuted } from "@/components/shared/typography";
+import { TypographyMuted } from "@/components/shared/typography";
 import { QUERY_KEY } from "@/constants/query.const";
 import { prefetchQuery } from "@/utils/server-query";
 import { HydrationBoundary } from "@tanstack/react-query";
+import { Activity, Sparkles } from "lucide-react";
 import AllRequestsTable from "./all-requests-table";
 
 export default async function AllRequests({
@@ -16,15 +17,32 @@ export default async function AllRequests({
   );
 
   return (
-    <div className="space-y-8">
-      <div className="space-y-1">
-        <TypographyH3>All Help Requests</TypographyH3>
-        <TypographyMuted className="text-base">
-          View and manage all requests from users across the platform.
-        </TypographyMuted>
+    <div className="relative min-h-[calc(100vh-10rem)] space-y-12 pb-20 overflow-hidden">
+      {/* Ambient Background Glows */}
+      <div className="absolute top-0 right-0 size-[500px] bg-primary/5 blur-[120px] rounded-full -z-10 animate-pulse" />
+      <div className="absolute bottom-0 left-0 size-[400px] bg-emerald-500/5 blur-[100px] rounded-full -z-10" />
+
+      <div className="space-y-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-primary">
+          <Sparkles className="size-3" />
+          <span className="text-[10px] font-bold tracking-[0.2em] uppercase">Operations Center</span>
+        </div>
+
+        <div className="space-y-2">
+          <h1 className="text-5xl md:text-7xl font-black tracking-tight leading-[0.9] flex items-center gap-4">
+            Global <span className="text-primary">Requests</span>
+            <Activity className="size-10 md:size-14 text-muted-foreground/20 shrink-0" />
+          </h1>
+          <TypographyMuted className="text-lg md:text-xl font-medium tracking-tight opacity-70 max-w-2xl">
+            Monitor and manage all active help requests across the HopeLink network.
+          </TypographyMuted>
+        </div>
       </div>
+
       <HydrationBoundary state={dehydratedState}>
-        <AllRequestsTable queryString={queryString} />
+        <div className="relative z-10">
+          <AllRequestsTable queryString={queryString} />
+        </div>
       </HydrationBoundary>
     </div>
   );

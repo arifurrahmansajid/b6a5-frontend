@@ -7,6 +7,7 @@ import { TypographyP } from "@/components/shared/typography";
 import { QUERY_KEY } from "@/constants/query.const";
 import useDataTable from "@/hooks/use-data-table";
 import { useFetch } from "@/hooks/use-fetch";
+import { useEffect, useState } from "react";
 import { allResponsesTableColumns } from "./all-responses-table-columns";
 import { AllResponsesTableToolbar } from "./all-responses-table-toolbar";
 
@@ -17,6 +18,12 @@ type AllResponsesTableProps = {
 export default function AllResponsesTable({
   queryString,
 }: AllResponsesTableProps) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const { data, isLoading, isError, error } = useFetch({
     queryKey: [QUERY_KEY.RESPONSE.ALL_RESPONSE, queryString],
     queryFn: () => getResponses(queryString),
@@ -29,8 +36,8 @@ export default function AllResponsesTable({
     columns: allResponsesTableColumns,
   });
 
-  if (isLoading) {
-    return <TypographyP className="text-center">Loading...</TypographyP>;
+  if (!mounted || isLoading) {
+    return <TypographyP className="text-center py-10 opacity-50">Loading responses...</TypographyP>;
   }
 
   if (isError || !data?.success) {
@@ -38,7 +45,7 @@ export default function AllResponsesTable({
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 animate-in fade-in duration-500">
       <AllResponsesTableToolbar table={table} />
       <DataTable data={data} table={table} columns={allResponsesTableColumns} />
     </div>
