@@ -1,3 +1,5 @@
+"use client";
+
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "next-themes";
 import ReactQueryProviders from "./react-query-provider";
