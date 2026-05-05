@@ -7,7 +7,7 @@ import {
   TypographyP,
 } from "@/components/shared/typography";
 import { Button } from "@/components/ui/button";
-import { Globe, Heart, ShieldCheck, Zap } from "lucide-react";
+import { Globe, Heart, Mail, ShieldCheck, Zap } from "lucide-react";
 import Link from "next/link";
 
 export default function About() {
@@ -147,19 +147,38 @@ export default function About() {
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto text-center border-t border-border/50 pt-20">
-          <TypographyH2 className="text-3xl md:text-5xl font-bold mb-8">
-            Global Collaboration
-          </TypographyH2>
-          <TypographyP className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10">
-            We welcome partnerships with international organizations, community centers, and global leaders. For collaboration, feedback, or support, please connect with us at:
-          </TypographyP>
-          <Link
-            href="mailto:support@hopelink.com"
-            className="text-2xl md:text-4xl font-black text-primary hover:underline transition-all"
-          >
-            support@hopelink.com
-          </Link>
+        <div className="max-w-4xl mx-auto mt-20 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-500">
+          <div className="relative group p-1 rounded-[3rem] bg-gradient-to-br from-primary/20 via-border to-primary/10 overflow-hidden shadow-2xl">
+            <div className="absolute inset-0 bg-background/80 backdrop-blur-3xl rounded-[2.9rem] -z-10 transition-colors group-hover:bg-background/90" />
+            <div className="relative px-8 py-16 md:p-20 text-center">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary mb-8">
+                 <Mail className="size-4" />
+                 <span className="text-[10px] font-bold tracking-widest uppercase">Get in Touch</span>
+              </div>
+              
+              <TypographyH2 className="text-4xl md:text-6xl font-black mb-8 tracking-tight">
+                Global <span className="text-primary">Collaboration</span>
+              </TypographyH2>
+              
+              <TypographyP className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-12">
+                We welcome partnerships with international organizations, community centers, and global leaders. Whether you have feedback, collaboration ideas, or need support, our team is ready to connect.
+              </TypographyP>
+
+              <div className="flex flex-col items-center gap-6">
+                <p className="text-sm font-bold uppercase tracking-[0.3em] text-muted-foreground">Reach out directly at</p>
+                <a
+                  href="mailto:support@hopelink.com"
+                  className="relative group/btn inline-flex items-center gap-4 px-10 py-5 rounded-2xl bg-primary text-primary-foreground font-black text-xl md:text-2xl transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/40"
+                >
+                  <Mail className="size-6 group-hover/btn:animate-bounce" />
+                  support@hopelink.com
+                </a>
+                <TypographyMuted className="mt-4 italic">
+                  Average response time: &lt; 24 hours
+                </TypographyMuted>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
