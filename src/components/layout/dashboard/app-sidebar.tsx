@@ -19,7 +19,7 @@ export async function AppSidebar() {
   const dashboardPath = routeRulesUtil.getDefaultDashboardRoute(user);
 
   return (
-    <Sidebar className="top-(--header-height) h-[calc(100svh-var(--header-height))]!">
+    <Sidebar className="top-(--header-height) h-[calc(100svh-var(--header-height))]! bg-background/60 backdrop-blur-3xl border-r border-white/5 shadow-2xl transition-all duration-500">
       <SidebarHeaderContent dashboardPath={dashboardPath} />
       <ScrollArea className="flex-1 min-h-0">
         <SidebarMainContent navSections={navSections} />

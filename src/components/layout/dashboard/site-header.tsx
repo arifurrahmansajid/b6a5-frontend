@@ -18,27 +18,29 @@ export function SiteHeader() {
   const { toggleSidebar } = useSidebar();
 
   return (
-    <header className="sticky top-0 z-50 flex w-full items-center border-b bg-background">
-      <div className="flex h-(--header-height) w-full items-center gap-2 px-4">
-        <Button variant="ghost" size="icon" onClick={toggleSidebar}>
-          <PanelLeftIcon />
+    <header className="sticky top-0 z-50 flex w-full items-center bg-background/60 backdrop-blur-3xl border-b border-white/5 shadow-sm transition-all duration-300">
+      <div className="flex h-(--header-height) w-full items-center gap-4 px-6">
+        <Button variant="ghost" size="icon" onClick={toggleSidebar} className="hover:bg-primary/10 hover:text-primary transition-colors">
+          <PanelLeftIcon className="size-5" />
         </Button>
-        <Separator
-          orientation="vertical"
-          className="mr-2 data-vertical:h-4 data-vertical:self-auto"
-        />
+        <div className="h-6 w-px bg-white/10 hidden md:block" />
         <Breadcrumb className="hidden sm:block">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="#">Build Your Application</BreadcrumbLink>
+              <BreadcrumbLink href="#" className="text-xs font-bold uppercase tracking-widest opacity-40 hover:opacity-100 transition-opacity">Platform</BreadcrumbLink>
             </BreadcrumbItem>
-            <BreadcrumbSeparator />
+            <BreadcrumbSeparator className="opacity-20" />
             <BreadcrumbItem>
-              <BreadcrumbPage>Data Fetching</BreadcrumbPage>
+              <BreadcrumbPage className="text-xs font-black uppercase tracking-[0.2em] text-primary">Command Center</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <SearchForm className="w-full sm:ml-auto sm:w-auto" />
+        <div className="ml-auto flex items-center gap-4">
+          <SearchForm className="hidden md:block w-72" />
+          <div className="size-8 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+            <div className="size-2 rounded-full bg-primary animate-pulse" />
+          </div>
+        </div>
       </div>
     </header>
   );
