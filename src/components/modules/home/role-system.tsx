@@ -1,154 +1,111 @@
-import {
-  TypographyH2,
-  TypographyH4,
-  TypographyLarge,
-  TypographyMuted,
-  TypographyP,
-} from "@/components/shared/typography";
-import BackgroundPattern from "@/components/ui/background-pattern";
+import { TypographyMuted } from "@/components/shared/typography";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
-  ArrowUpRightIcon,
-  Building2Icon,
-  CircleDollarSignIcon,
-  HandHeartIcon,
-  UsersRoundIcon,
+  ArrowUpRight,
+  Building2,
+  CircleDollarSign,
+  HeartHandshake,
+  Users2,
 } from "lucide-react";
 import Link from "next/link";
 
 const roles = [
   {
-    icon: HandHeartIcon,
+    icon: HeartHandshake,
     title: "User",
     subtitle: "Start your journey",
-    desc: "Sign up as a User to request help, connect with supporters, and explore the HopeLink community.",
+    desc: "Request help, connect with supporters, and explore the global community.",
+    color: "primary"
   },
   {
-    icon: CircleDollarSignIcon,
+    icon: CircleDollarSign,
     title: "Donor",
     subtitle: "Empower through giving",
-    desc: "Provide financial aid to those in need and track your contributions transparently.",
+    desc: "Provide financial aid and track your contributions with total transparency.",
+    color: "emerald"
   },
   {
-    icon: UsersRoundIcon,
+    icon: Users2,
     title: "Volunteer",
     subtitle: "Hands-on support",
-    desc: "Offer your skills and time to support requests in your area, making a direct impact.",
+    desc: "Offer your skills and time to support urgent requests in your local area.",
+    color: "primary"
   },
   {
-    icon: Building2Icon,
+    icon: Building2,
     title: "Organization",
     subtitle: "Lead and scale",
-    desc: "Manage campaigns, assign volunteers, and coordinate large-scale efforts effectively.",
+    desc: "Manage campaigns and coordinate large-scale efforts effectively.",
+    color: "emerald"
   },
 ];
 
-const delays = ["delay-100", "delay-200", "delay-300", "delay-500"];
-
 export function RoleSystem() {
   return (
-    <div className="bg-primary/4">
-      <section className="max-w-(--breakpoint-xl) mx-auto px-6 text-center py-24">
-        <strong className="font-semibold text-muted-foreground">
-          Powerful Role System
-        </strong>
-        <TypographyH2 className="mt-5 max-w-4xl mx-auto text-4xl sm:text-5xl leading-[1.1 text-balance">
-          Everyone plays a <span className="text-primary">role</span> — together
-          we create real impact
-        </TypographyH2>
-        <TypographyMuted className="mt-3 max-w-2xl mx-auto text-lg">
-          Sign up as a <strong>User</strong> first, then unlock additional roles
-          after onboarding.
-        </TypographyMuted>
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 justify-items-center">
+    <section className="relative py-32 overflow-hidden bg-background">
+      {/* Cinematic Ambient Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[800px] bg-primary/5 blur-[120px] rounded-full -z-10" />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="text-center mb-20 space-y-4 animate-in fade-in slide-in-from-bottom-8 duration-700">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary">
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase">Impact Roles</span>
+          </div>
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-tight">
+            Everyone plays a <span className="text-primary underline decoration-primary/20 underline-offset-8">role</span>
+          </h2>
+          <TypographyMuted className="text-lg md:text-xl max-w-2xl mx-auto">
+            Together we create real impact. Start as a User and unlock your potential.
+          </TypographyMuted>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {roles.map((role, i) => (
             <div
               key={role.title}
               className={cn(
-                "rounded-lg border bg-muted p-1 w-full sm:max-w-xs",
-                "transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-primary/50",
-                "animate-in fade-in slide-in-from-bottom-4",
-                delays[i],
+                "group relative p-1 rounded-[2.5rem] bg-gradient-to-b from-border/50 to-transparent transition-all duration-500 hover:-translate-y-2",
+                "animate-in fade-in slide-in-from-bottom-12 duration-700",
+                i === 0 ? "delay-100" : i === 1 ? "delay-200" : i === 2 ? "delay-300" : "delay-500"
               )}
             >
-              <div className="relative px-6 py-10 bg-card rounded-md border h-full overflow-hidden flex flex-col items-center gap-4">
-                <BackgroundPattern />
-                <role.icon
-                  className="size-14 text-primary transition-transform duration-300 group-hover:scale-110"
-                  strokeWidth={1.75}
+              <div className="relative h-full px-8 py-12 bg-card rounded-[2.4rem] border border-border/50 overflow-hidden flex flex-col items-center text-center">
+                {/* Decorative Grid */}
+                <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+                  style={{ backgroundImage: `radial-gradient(circle at 2px 2px, var(--foreground) 1px, transparent 0)`, backgroundSize: '24px 24px' }} 
                 />
-                <TypographyH4>{role.title}</TypographyH4>
-                <TypographyLarge className="text-muted-foreground">
-                  {role.subtitle}
-                </TypographyLarge>
-                <TypographyP className="text-center  not-first:mt-0">
-                  {role.desc}
-                </TypographyP>
-                <Button asChild size="sm">
-                  <Link href="/sign-up">
-                    {role.title === "User" ? "Sign Up" : "Join"}
-                    <ArrowUpRightIcon className="size-4" />
+
+                <div className={cn(
+                  "size-20 rounded-2xl flex items-center justify-center mb-8 transition-all duration-500 shadow-2xl",
+                  "bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:shadow-primary/40",
+                  role.color === "emerald" && "bg-emerald-500/10 text-emerald-500 group-hover:bg-emerald-500 group-hover:shadow-emerald-500/40"
+                )}>
+                  <role.icon className="size-10 transition-transform duration-500 group-hover:scale-110" />
+                </div>
+
+                <div className="space-y-4 mb-8 flex-1">
+                  <h3 className="text-2xl font-black tracking-tight">{role.title}</h3>
+                  <p className="text-xs font-bold uppercase tracking-widest text-primary/80">{role.subtitle}</p>
+                  <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+                    {role.desc}
+                  </p>
+                </div>
+
+                <Button asChild className="w-full h-14 rounded-2xl font-bold group/btn relative overflow-hidden" variant={role.color === "emerald" ? "default" : "default"}>
+                  <Link href="/sign-up" className="flex items-center justify-center gap-2">
+                    {role.title === "User" ? "Sign Up" : "Join Now"}
+                    <ArrowUpRight className="size-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                   </Link>
                 </Button>
-                <PatternDashedTop />
+
+                {/* Subtle Hover Glow */}
+                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
               </div>
             </div>
           ))}
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
-
-const PatternDashedTop = () => {
-  return (
-    <div
-      className="absolute inset-0 -top-px -left-px z-0"
-      style={{
-        backgroundImage: `
-        linear-gradient(to right, var(--border) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--border) 1px, transparent 1px)
-      `,
-        backgroundSize: "20px 20px",
-        backgroundPosition: "0 0, 0 0",
-        maskImage: `
-        repeating-linear-gradient(
-              to right,
-              black 0px,
-              black 3px,
-              transparent 3px,
-              transparent 8px
-            ),
-            repeating-linear-gradient(
-              to bottom,
-              black 0px,
-              black 3px,
-              transparent 3px,
-              transparent 8px
-            ),
-            radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%)
-      `,
-        WebkitMaskImage: `
- repeating-linear-gradient(
-              to right,
-              black 0px,
-              black 3px,
-              transparent 3px,
-              transparent 8px
-            ),
-            repeating-linear-gradient(
-              to bottom,
-              black 0px,
-              black 3px,
-              transparent 3px,
-              transparent 8px
-            ),
-            radial-gradient(ellipse 70% 50% at 50% 0%, #000 60%, transparent 100%)
-      `,
-        maskComposite: "intersect",
-        WebkitMaskComposite: "source-in",
-      }}
-    />
-  );
-};
