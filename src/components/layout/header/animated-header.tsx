@@ -13,18 +13,18 @@ export default function AnimatedHeader({
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 mx-auto w-full max-w-5xl border-transparent border-b md:rounded-md md:border md:transition-all md:ease-out",
+        "sticky top-0 z-50 mx-auto w-full max-w-7xl border-transparent border-b transition-all duration-500 ease-in-out px-4 py-4",
         {
-          "border-border bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/50 md:top-2 md:max-w-3xl md:shadow":
-            scrolled,
+          "py-2": scrolled,
         },
       )}
     >
       <nav
         className={cn(
-          "flex h-14 w-full items-center justify-between px-4 md:h-12 md:transition-all md:ease-out",
+          "flex h-16 w-full items-center justify-between px-6 rounded-2xl transition-all duration-500 ease-in-out border border-transparent",
           {
-            "md:px-2": scrolled,
+            "bg-background/80 backdrop-blur-xl border-border shadow-2xl shadow-primary/5 h-14 md:max-w-5xl mx-auto":
+              scrolled,
           },
         )}
       >
