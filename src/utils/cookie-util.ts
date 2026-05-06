@@ -25,13 +25,21 @@ const setCookie = async (name: string, value: string, age: number) => {
     const cookieStore = await cookies();
     const options = cookieOptions(age);
 
-    cookieStore.set(name, value, options);
-    console.debug(
-      `✅ [CookieUtil] setCookie success for ${name} (age: ${age}s)`,
-    );
+    try {
+      cookieStore.set(name, value, options);
+      console.debug(
+        `✅ [CookieUtil] setCookie success for ${name} (age: ${age}s)`,
+      );
+    } catch (cookieError) {
+      // If we are in a Server Component render, Next.js will throw an error here.
+      // We log it but don't rethrow, allowing the app to continue.
+      console.warn(
+        `⚠️ [CookieUtil] Could not set cookie "${name}" during rendering. This is expected if triggered from a Server Component.`,
+      );
+    }
   } catch (error) {
-    console.error(`❌ [CookieUtil] setCookie failed for ${name}:`, error);
-    throw error;
+    console.error(`❌ [CookieUtil] get cookieStore failed for ${name}:`, error);
+    // We don't throw here to prevent crashing the whole render cycle
   }
 };
 
