@@ -70,6 +70,7 @@ export function AppModal({
             )}
           </DialogHeader>
         )}
+        {!title && <DialogTitle className="sr-only">Modal dialog</DialogTitle>}
         <ScrollArea className={cn("max-h-[70vh] pr-4", heightClass)}>
           {children}
         </ScrollArea>
