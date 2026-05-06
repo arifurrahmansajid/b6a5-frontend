@@ -13,17 +13,17 @@ export default function AnimatedHeader({
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 mx-auto w-full max-w-7xl border-transparent border-b transition-all duration-500 ease-in-out px-4 py-4",
+        "sticky top-0 z-50 mx-auto w-full max-w-7xl transition-all duration-500 ease-in-out px-4 py-2",
         {
-          "py-2": scrolled,
+          "py-1": scrolled,
         },
       )}
     >
       <nav
         className={cn(
-          "flex h-16 w-full items-center justify-between px-6 rounded-2xl transition-all duration-500 ease-in-out border border-transparent",
+          "flex h-14 w-full items-center justify-between px-6 rounded-2xl transition-all duration-500 ease-in-out border border-transparent",
           {
-            "bg-background/80 backdrop-blur-xl border-border shadow-2xl shadow-primary/5 h-14 md:max-w-5xl mx-auto":
+            "bg-background/80 backdrop-blur-xl border-border shadow-2xl shadow-primary/5 h-12 md:max-w-5xl mx-auto":
               scrolled,
           },
         )}
