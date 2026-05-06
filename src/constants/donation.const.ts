@@ -1,0 +1,6 @@
+export const DONATION_STATUS = {
+  PENDING: "PENDING",
+  COMPLETED: "COMPLETED",
+  FAILED: "FAILED",
+  CANCELLED: "CANCELLED",
+} as const;

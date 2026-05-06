@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/card";
 import { IDonationResponse } from "@/types";
 import { format } from "date-fns";
+import { AllDonationStatusUpdate } from "./all-donation-status-update";
 
 type AllDonationDetailsProps = {
   data?: IDonationResponse;
@@ -33,16 +34,22 @@ export default function AllDonationDetails({ data }: AllDonationDetailsProps) {
 
   return (
     <Card className="w-full max-w-2xl mx-auto">
-      <CardHeader>
-        <CardTitle>
-          <TypographyH3>Donation Overview</TypographyH3>
-        </CardTitle>
-        <CardDescription>
-          <TypographyMuted>
-            Donated on{" "}
-            {format(new Date(data.createdAt), "dd MMM yyyy, hh:mm a")}
-          </TypographyMuted>
-        </CardDescription>
+      <CardHeader className="flex flex-row items-center justify-between space-y-0">
+        <div>
+          <CardTitle>
+            <TypographyH3>Donation Overview</TypographyH3>
+          </CardTitle>
+          <CardDescription>
+            <TypographyMuted>
+              Donated on{" "}
+              {format(new Date(data.createdAt), "dd MMM yyyy, hh:mm a")}
+            </TypographyMuted>
+          </CardDescription>
+        </div>
+        <AllDonationStatusUpdate
+          donationId={data.id}
+          currentStatus={data.status}
+        />
       </CardHeader>
       <CardContent>
         <div className="space-y-4">

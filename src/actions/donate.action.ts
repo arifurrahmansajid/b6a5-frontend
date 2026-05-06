@@ -56,3 +56,15 @@ export const getReceivedDonations = async (queryString?: string) =>
     const response = await httpClient.get<IDonationListResponse>(endpoint);
     return response;
   });
+
+export const updateDonationStatus = async (
+  donationId: string,
+  status: string,
+) =>
+  safeRequest(async () => {
+    const response = await httpClient.patch<IDonationResponse>(
+      `/donations/${donationId}/status`,
+      { status },
+    );
+    return response;
+  });
