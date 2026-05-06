@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <div className="relative min-h-[90vh] flex items-center pb-8 overflow-hidden">
+    <div className="relative min-h-[80vh] flex items-center pb-8 overflow-hidden">
       {/* Background Ambient Glow */}
       <div className="absolute top-0 right-0 -z-10 w-full h-full">
         <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary/20 blur-[120px] rounded-full animate-pulse" />
