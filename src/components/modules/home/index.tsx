@@ -10,7 +10,7 @@ import { Testimonials } from "./testimonials";
 
 export default function Home() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Hero />
       <EarlyCtaBanner />
       {/* <ImpactStats /> */}
@@ -23,6 +23,6 @@ export default function Home() {
       <FAQ />
       <FinalCtaBanner />
       <NewsletterSignup />
-    </>
+    </div>
   );
 }

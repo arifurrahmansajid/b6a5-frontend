@@ -6,11 +6,12 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <div className="relative min-h-[80vh] flex items-center pb-8 overflow-hidden">
-      {/* Background Ambient Glow */}
-      <div className="absolute top-0 right-0 -z-10 w-full h-full">
-        <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary/20 blur-[120px] rounded-full animate-pulse" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-500/10 blur-[100px] rounded-full" />
+    <div className="relative min-h-[80vh] flex items-center pb-8">
+      {/* Seamless Transition Mask */}
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background via-background/80 to-transparent z-10 pointer-events-none" />
+      <div className="absolute top-0 right-0 -z-10 w-full h-full pointer-events-none">
+        <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary/20 blur-[120px] rounded-full animate-pulse opacity-60" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-500/10 blur-[100px] rounded-full opacity-60" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
