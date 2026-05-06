@@ -13,9 +13,9 @@ const cookieOptions = (age: number) => {
   const options: TCookieOptions = {
     path: "/",
     maxAge: age,
-    secure: true,
+    secure: process.env.NODE_ENV === "production",
     httpOnly: true,
-    sameSite: "strict",
+    sameSite: "lax",
   };
   return options;
 };
