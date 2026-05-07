@@ -7,22 +7,26 @@ export function EarlyCtaBanner() {
   return (
     <section className="w-full bg-white overflow-hidden">
       {/* Top Marquee-style Bar */}
-      <div className="w-full bg-[#F9D362] py-4 border-y border-black/5 relative z-20">
-        <div className="flex animate-marquee whitespace-nowrap gap-12 items-center">
+      <div className="w-full bg-[#F9D362] py-4 border-y border-black/5 relative z-20 overflow-hidden">
+        <div className="flex animate-marquee whitespace-nowrap w-max">
           {[1, 2].map((group) => (
-            <div key={group} className="flex items-center gap-12">
-              <span className="flex items-center gap-6 text-sm font-black uppercase tracking-wider text-black">
-                Health Support <span className="text-xl">✱</span>
-              </span>
-              <span className="flex items-center gap-6 text-sm font-black uppercase tracking-wider text-black">
-                Volunteer Impact <span className="text-xl">✱</span>
-              </span>
-              <span className="flex items-center gap-6 text-sm font-black uppercase tracking-wider text-black">
-                Future Ready <span className="text-xl">✱</span>
-              </span>
-              <span className="flex items-center gap-6 text-sm font-black uppercase tracking-wider text-black">
-                Community Support <span className="text-xl">✱</span>
-              </span>
+            <div key={group} className="flex items-center">
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="flex items-center">
+                  <span className="flex items-center gap-6 text-sm font-black uppercase tracking-wider text-black px-6">
+                    Health Support <span className="text-xl">✱</span>
+                  </span>
+                  <span className="flex items-center gap-6 text-sm font-black uppercase tracking-wider text-black px-6">
+                    Volunteer Impact <span className="text-xl">✱</span>
+                  </span>
+                  <span className="flex items-center gap-6 text-sm font-black uppercase tracking-wider text-black px-6">
+                    Future Ready <span className="text-xl">✱</span>
+                  </span>
+                  <span className="flex items-center gap-6 text-sm font-black uppercase tracking-wider text-black px-6">
+                    Community Support <span className="text-xl">✱</span>
+                  </span>
+                </div>
+              ))}
             </div>
           ))}
         </div>
