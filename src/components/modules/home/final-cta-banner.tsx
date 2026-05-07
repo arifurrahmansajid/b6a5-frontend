@@ -85,12 +85,12 @@ export function FinalCtaBanner({
             <span className="text-xs font-black uppercase tracking-widest">Start Your Journey</span>
           </div>
 
-          <h2 className="text-4xl md:text-6xl font-black tracking-tight text-white leading-tight">
+          <h2 className="text-[48px] font-black tracking-tight text-white leading-tight">
             Grow Your <span className="text-[#F9D362]">Legacy</span> <br />
             by Serving with HopeLink
           </h2>
 
-          <p className="text-lg text-white/70 leading-relaxed max-w-xl">
+          <p className="text-[18px] text-white/70 leading-relaxed max-w-xl">
             Join as a donor or volunteer and make a lasting impact. Every act of giving—whether your time or contributions—brightens lives and brings eternal rewards.
           </p>
 

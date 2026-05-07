@@ -67,12 +67,12 @@ export function FAQ() {
               <div className="size-1 bg-[#F9D362] rounded-full" />
               Frequently Asked Questions
             </div>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tight text-[#022C22] leading-[1.1]">
+            <h2 className="text-[48px] font-black tracking-tight text-[#022C22] leading-[1.1]">
               Helping you Understand <br /> Our Work Better
             </h2>
           </div>
           <div className="space-y-8 max-w-xl lg:ml-auto">
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-[18px] text-muted-foreground leading-relaxed">
               We've gathered answers to the questions we hear most, making it easy for you to learn about our work, values, and the impact we create together.
             </p>
             <Button asChild size="lg" className="h-14 px-10 rounded-xl !bg-[#F9D362] hover:!bg-[#eec13c] !text-black font-black group border-none">

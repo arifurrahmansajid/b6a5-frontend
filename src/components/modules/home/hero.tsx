@@ -37,7 +37,7 @@ export function Hero() {
           </div>
 
           <TypographyH1
-            className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight leading-[1.1] mb-6 text-white
+            className="text-[48px] font-black tracking-tight leading-[1.1] mb-6 text-white
                        animate-in fade-in slide-in-from-left-12 duration-1000 fill-mode-backwards"
           >
             Request Help, <br />
@@ -47,7 +47,7 @@ export function Hero() {
           </TypographyH1>
 
           <TypographyMuted
-            className="text-lg md:text-xl max-w-xl mb-10 text-white/80
+            className="text-[18px] max-w-xl mb-10 text-white/80
                        animate-in fade-in slide-in-from-left-16 duration-1000 delay-200 fill-mode-backwards"
           >
             Empowering the global community through seamless support. Post help requests, contribute your wealth, or gift your time to make a real-world impact.

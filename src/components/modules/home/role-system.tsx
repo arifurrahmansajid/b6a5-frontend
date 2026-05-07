@@ -52,10 +52,10 @@ export function RoleSystem() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary">
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase">Impact Roles</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-tight">
+          <h2 className="text-[48px] font-black tracking-tighter leading-tight">
             Everyone plays a <span className="text-primary underline decoration-primary/20 underline-offset-8">role</span>
           </h2>
-          <TypographyMuted className="text-lg md:text-xl max-w-2xl mx-auto">
+          <TypographyMuted className="text-[18px] max-w-2xl mx-auto">
             Together we create real impact. Start as a User and unlock your potential.
           </TypographyMuted>
         </div>

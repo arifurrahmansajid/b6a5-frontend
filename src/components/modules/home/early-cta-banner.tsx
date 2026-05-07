@@ -69,12 +69,12 @@ export function EarlyCtaBanner() {
             <span className="text-[11px] font-black uppercase tracking-[0.2em]">Trusted Humanitarian Network</span>
           </div>
 
-          <h2 className="text-5xl md:text-7xl font-black tracking-tight leading-[1.05] text-[#022C22]">
+          <h2 className="text-[48px] font-black tracking-tight leading-[1.05] text-[#022C22]">
             Your Kindness <br />
             Knows No Borders
           </h2>
 
-          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
+          <p className="text-[18px] text-muted-foreground leading-relaxed max-w-xl">
             Join a global community dedicated to transforming lives. Whether you give time or resources, your impact starts here. We believe in the power of collective compassion through dedicated efforts and inclusive programs.
           </p>
 

@@ -46,10 +46,10 @@ export function HowItWorks() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary">
             <span className="text-[10px] font-bold tracking-[0.2em] uppercase">The Process</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-tight">
+          <h2 className="text-[48px] font-black tracking-tighter leading-tight">
             How it <span className="text-primary">Works</span>
           </h2>
-          <TypographyMuted className="text-lg md:text-xl max-w-2xl mx-auto">
+          <TypographyMuted className="text-[18px] max-w-2xl mx-auto">
             From initial request to real-world impact in four simple, transparent steps.
           </TypographyMuted>
         </div>

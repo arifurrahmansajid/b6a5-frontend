@@ -27,12 +27,12 @@ export function NewsletterSignup() {
               <span className="text-[10px] font-black uppercase tracking-[0.2em]">Don't Miss Out</span>
             </div>
 
-            <h2 className="text-5xl md:text-8xl font-black tracking-tight text-white leading-[1.05]">
+            <h2 className="text-[48px] font-black tracking-tight text-white leading-[1.05]">
               Stay in the <br />
               <span className="text-[#F9D362]">Loop</span>
             </h2>
 
-            <p className="text-lg md:text-2xl text-white/80 max-w-2xl leading-relaxed font-medium">
+            <p className="text-[18px] text-white/80 max-w-2xl leading-relaxed font-medium">
               Join our global community of changemakers. Get the latest humanitarian insights and impact stories delivered to your inbox.
             </p>
           </div>

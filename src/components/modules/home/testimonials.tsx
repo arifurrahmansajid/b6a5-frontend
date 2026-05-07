@@ -68,10 +68,10 @@ export function Testimonials() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-border text-[10px] font-bold uppercase tracking-widest text-muted-foreground shadow-sm">
               Our Testimonials
             </div>
-            <h2 className="text-4xl md:text-6xl font-black tracking-tight text-[#022C22]">
+            <h2 className="text-[48px] font-black tracking-tight text-[#022C22]">
               Voices of Real Peoples
             </h2>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-[18px] text-muted-foreground leading-relaxed">
               Hear directly from the people, volunteers, and partners whose lives have been touched by our work and who continue to believe in our mission.
             </p>
           </div>

@@ -55,11 +55,11 @@ export function FeatureHighlights() {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary">
              <span className="text-[10px] font-bold tracking-[0.2em] uppercase">Core Capabilities</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-tight">
+          <h2 className="text-[48px] font-black tracking-tighter leading-tight">
             Empower the <span className="text-primary">HopeLink</span> <br />
             Help Anytime, Anywhere
           </h2>
-          <TypographyMuted className="text-lg md:text-xl max-w-2xl mx-auto">
+          <TypographyMuted className="text-[18px] max-w-2xl mx-auto">
             A comprehensive suite of tools designed to make humanitarian aid more accessible, transparent, and impactful.
           </TypographyMuted>
         </div>
