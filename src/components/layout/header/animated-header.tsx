@@ -2,6 +2,7 @@
 
 import { useScroll } from "@/hooks/use-scroll";
 import { cn } from "@/lib/utils";
+import React from "react";
 
 export default function AnimatedHeader({
   children,
@@ -13,17 +14,17 @@ export default function AnimatedHeader({
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 mx-auto w-full max-w-7xl transition-all duration-500 ease-in-out px-4 py-2",
+        "fixed top-0 z-50 w-full transition-all duration-500 ease-in-out px-4 py-4 md:px-10",
         {
-          "py-1": scrolled,
+          "py-2": scrolled,
         },
       )}
     >
       <nav
         className={cn(
-          "flex h-14 w-full items-center justify-between px-6 rounded-2xl transition-all duration-500 ease-in-out border border-transparent",
+          "flex h-16 w-full items-center justify-between px-6 transition-all duration-500 ease-in-out",
           {
-            "bg-background/80 backdrop-blur-xl border-border shadow-2xl shadow-primary/5 h-12 md:max-w-5xl mx-auto":
+            "bg-background/80 backdrop-blur-xl border border-border shadow-2xl rounded-2xl h-14 md:max-w-6xl mx-auto":
               scrolled,
           },
         )}

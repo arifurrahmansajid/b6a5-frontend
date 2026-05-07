@@ -8,6 +8,7 @@ import { MenuIcon, XIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { navLinks } from "./nav-links";
+import { useScroll } from "@/hooks/use-scroll";
 
 interface MobileNavProps {
   dashboardPath: string;
@@ -15,6 +16,7 @@ interface MobileNavProps {
 
 export function MobileNav({ dashboardPath }: MobileNavProps) {
   const [open, setOpen] = React.useState(false);
+  const scrolled = useScroll(10);
 
   const session = useSession();
 
@@ -24,7 +26,12 @@ export function MobileNav({ dashboardPath }: MobileNavProps) {
         aria-controls="mobile-menu"
         aria-expanded={open}
         aria-label="Toggle menu"
-        className="md:hidden"
+        className={cn(
+          "md:hidden transition-all",
+          scrolled 
+            ? "text-foreground border-border" 
+            : "text-white border-white/20 bg-white/10 backdrop-blur-md hover:bg-white/20"
+        )}
         onClick={() => setOpen(!open)}
         size="icon"
         variant="outline"
