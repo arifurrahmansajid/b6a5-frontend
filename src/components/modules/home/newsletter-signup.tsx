@@ -49,7 +49,7 @@ export function NewsletterSignup() {
               />
             </div>
 
-            <Button size="lg" className="h-16 px-10 rounded-2xl bg-[#F9D362] hover:bg-[#eec13c] text-black font-black text-lg transition-all hover:scale-[1.02] active:scale-[0.98] shadow-2xl shadow-[#F9D362]/10 flex items-center gap-3 group">
+            <Button size="lg" className="h-16 px-10 rounded-2xl !bg-[#F9D362] hover:!bg-[#eec13c] !text-black font-black text-lg transition-all hover:scale-[1.02] active:scale-[0.98] shadow-2xl shadow-[#F9D362]/10 flex items-center gap-3 group border-none">
               SUBSCRIBE
               <ArrowRight className="size-5 group-hover:translate-x-1 transition-transform" />
             </Button>
