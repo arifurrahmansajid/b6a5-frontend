@@ -1,61 +1,67 @@
 import { TypographyMuted } from "@/components/shared/typography";
 import { Button } from "@/components/ui/button";
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupInput,
-} from "@/components/ui/input-group";
-import { ArrowRight, AtSign, Mail, Sparkles } from "lucide-react";
+import { ArrowRight, Mail, Bell } from "lucide-react";
+import Image from "next/image";
 
 export function NewsletterSignup() {
   return (
-    <section className="relative py-24 overflow-hidden">
-      {/* Background Cinematic Glows */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 size-[500px] bg-primary/5 blur-[100px] rounded-full -z-10 -translate-x-1/2" />
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 size-[500px] bg-emerald-500/5 blur-[100px] rounded-full -z-10 translate-x-1/2" />
+    <section className="relative w-full h-[500px] md:h-[650px] flex items-center overflow-hidden mx-auto">
+      {/* Background with Theme-consistent Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/imgi_63_hero-bg-image.jpg"
+          alt="Impact background"
+          fill
+          className="object-cover"
+        />
+        {/* Obsidian Emerald Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#022C22]/95 via-[#022C22]/70 to-transparent" />
+        <div className="absolute inset-0 bg-black/20" />
+      </div>
 
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="relative group p-1 rounded-[3rem] bg-gradient-to-r from-border/50 via-primary/20 to-border/50 transition-all duration-700 hover:shadow-2xl hover:shadow-primary/5 overflow-hidden">
-          {/* Animated Background Gradient */}
-          <div className="absolute inset-0 bg-card opacity-95" />
-          
-          <div className="relative z-10 px-8 py-16 md:py-20 flex flex-col md:flex-row items-center justify-between gap-12">
-            <div className="flex-1 space-y-6 text-center md:text-start max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary">
-                <Sparkles className="size-3" />
-                <span className="text-[10px] font-bold tracking-[0.2em] uppercase">Impact Updates</span>
-              </div>
-              <h2 className="text-4xl md:text-6xl font-black tracking-tighter leading-tight">
-                Stay in the <span className="text-primary underline underline-offset-8 decoration-primary/20">Loop</span>
-              </h2>
-              <TypographyMuted className="text-lg md:text-xl max-w-xl">
-                Join our global community of changemakers. Get the latest humanitarian insights and impact stories delivered to your inbox.
-              </TypographyMuted>
+      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+        <div className="max-w-3xl space-y-10 animate-in fade-in slide-in-from-left-12 duration-1000">
+          <div className="space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F9D362]/10 border border-[#F9D362]/20 text-[#F9D362]">
+              <Bell className="size-3.5" />
+              <span className="text-[10px] font-black uppercase tracking-[0.2em]">Don't Miss Out</span>
             </div>
-
-            <div className="w-full md:w-auto flex flex-col sm:flex-row items-center gap-4 bg-background/50 backdrop-blur-xl p-2 rounded-[2rem] border border-border/50 shadow-2xl">
-              <div className="relative flex-1 min-w-[300px]">
-                <InputGroup className="bg-transparent border-none focus-within:ring-0">
-                  <InputGroupAddon className="pl-4 text-muted-foreground/50">
-                    <AtSign className="size-5" />
-                  </InputGroupAddon>
-                  <InputGroupInput 
-                    placeholder="your.email@example.com" 
-                    className="h-14 bg-transparent border-none text-base focus-visible:ring-0 focus-visible:ring-offset-0"
-                  />
-                </InputGroup>
-              </div>
-              <Button size="lg" className="w-full sm:w-auto h-14 px-8 rounded-2xl font-bold group/btn relative overflow-hidden shadow-xl shadow-primary/20">
-                <Mail className="size-4 mr-2" />
-                Subscribe
-                <ArrowRight className="size-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
-              </Button>
-            </div>
+            
+            <h2 className="text-5xl md:text-8xl font-black tracking-tight text-white leading-[1.05]">
+              Stay in the <br />
+              <span className="text-[#F9D362]">Loop</span>
+            </h2>
+            
+            <p className="text-lg md:text-2xl text-white/80 max-w-2xl leading-relaxed font-medium">
+              Join our global community of changemakers. Get the latest humanitarian insights and impact stories delivered to your inbox.
+            </p>
           </div>
 
-          {/* Decorative Elements */}
-          <div className="absolute -bottom-12 -right-12 size-64 bg-primary/5 blur-3xl rounded-full" />
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4 max-w-xl">
+            <div className="flex-1 relative group">
+              <div className="absolute inset-y-0 left-5 flex items-center text-white/30 group-focus-within:text-[#F9D362] transition-colors">
+                <Mail className="size-5" />
+              </div>
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                className="w-full h-16 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl pl-14 pr-6 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[#F9D362]/50 transition-all shadow-inner"
+              />
+            </div>
+            
+            <Button size="lg" className="h-16 px-10 rounded-2xl bg-[#F9D362] hover:bg-[#eec13c] text-black font-black text-lg transition-all hover:scale-[1.02] active:scale-[0.98] shadow-2xl shadow-[#F9D362]/10 flex items-center gap-3 group">
+              SUBSCRIBE
+              <ArrowRight className="size-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </div>
         </div>
+      </div>
+
+      {/* Modern Side Navigation Accent */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-3 p-4 bg-white/5 backdrop-blur-2xl rounded-l-3xl border-l border-y border-white/10 shadow-2xl">
+        <div className="size-12 rounded-xl bg-[#F9D362] flex items-center justify-center text-black shadow-lg shadow-[#F9D362]/20"><Mail className="size-5" /></div>
+        <div className="size-12 rounded-xl bg-white/10 flex items-center justify-center text-white/40 hover:text-white transition-colors cursor-pointer"><div className="size-2 rounded-full bg-white/40" /></div>
+        <div className="size-12 rounded-xl bg-white/10 flex items-center justify-center text-white/40 hover:text-white transition-colors cursor-pointer"><div className="size-2 rounded-full bg-white/40" /></div>
       </div>
     </section>
   );
