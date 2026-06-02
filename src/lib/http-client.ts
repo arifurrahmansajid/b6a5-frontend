@@ -28,7 +28,7 @@ const createAxiosInstance = async (isProtected: boolean) => {
 
   return axios.create({
     baseURL: env.API_BASE_URL,
-    timeout: 15000, // 15 seconds
+    timeout: 60000, // 60 seconds (Render free tier needs time to wake up)
     headers,
     withCredentials: false, // Manually handle cookies via headers
   });
