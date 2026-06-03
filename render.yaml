@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: b5a5-frontend
+    runtime: node
+    buildCommand: npm install --legacy-peer-deps && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: API_BASE_URL
+        value: https://b6a5-backend-1.onrender.com/api/v1
+      - key: NEXT_PUBLIC_API_BASE_URL
+        value: https://b6a5-backend-1.onrender.com/api/v1
+      - key: NEXT_PUBLIC_APP_URL
+        value: https://b6a5-frontend.onrender.com
+      - key: NEXT_PUBLIC_APP_NAME
+        value: HopeLink
+      - key: ACCESS_TOKEN_SECRET
+        sync: false
+      - key: SESSION_TOKEN_AGE
+        value: 30d
+      - key: ACCESS_TOKEN_AGE
+        value: 30d
+      - key: REFRESH_TOKEN_AGE
+        value: 30d
