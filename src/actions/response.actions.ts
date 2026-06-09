@@ -36,8 +36,8 @@ export const getResponses = async (queryString?: string) =>
 export const getMyResponses = async (queryString?: string) =>
   safeRequest(async () => {
     const endpoint = queryString
-      ? `/responses/me?${queryString}`
-      : "/responses/me";
+      ? `/responses/my-responses?${queryString}`
+      : "/responses/my-responses";
 
     const response = await httpClient.get<IMyResponse[]>(endpoint);
 
