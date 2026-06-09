@@ -4,7 +4,7 @@ import { proxyUtils } from "./utils/proxy.util";
 const { handleTokenRefresh, handleAuthRouteGuard, handleAccessControl } =
   proxyUtils;
 
-export async function proxy(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   try {
     console.debug(
       `📍 [Proxy File] Processing: ${request.method} ${request.nextUrl.pathname}`,
