@@ -20,6 +20,7 @@ import {
 import InactiveAccountCard from "./inactive-account-card";
 import { createResponseSchema } from "./response.schema";
 import { getResponseTypeOptions } from "./response.utils";
+import { useRouter } from "next/navigation";
 
 type ResponseFormProps = {
   data?: IResponse;
@@ -33,11 +34,18 @@ export default function ResponseForm({
   helpType,
 }: ResponseFormProps) {
   const isUpdate = Boolean(data);
+  const router = useRouter();
 
   const { refresh } = useRefreshQuery([QUERY_KEY.RESPONSE.MY_RESPONSES]);
 
   const session = useSession();
   if (!session || session.user.status !== USER_STATUS.ACTIVE) return null;
+
+  const userTypes = session.user.userTypes ?? [];
+  const isDonor = userTypes.some((t: { type: string }) => t.type === "DONOR");
+  const myResponsesPath = isDonor
+    ? "/donor/dashboard/my-responses"
+    : "/volunteer/dashboard/my-responses";
 
   const responseTypeOptions = getResponseTypeOptions(
     session.user.userTypes,
@@ -80,7 +88,12 @@ export default function ResponseForm({
       loadingMessage={messages.loading}
       successMessage={messages.success}
       errorMessage={messages.error}
-      onSuccess={async () => await refresh()}
+      onSuccess={async () => {
+        await refresh();
+        if (!isUpdate) {
+          router.push(myResponsesPath);
+        }
+      }}
     >
       {(form) => (
         <>
