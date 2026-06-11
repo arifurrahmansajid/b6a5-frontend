@@ -6,7 +6,9 @@ import {
   isTomorrow,
 } from "date-fns";
 
-export function formatExpiryDate(date: string | Date) {
+export function formatExpiryDate(date?: string | Date | null) {
+  if (!date) return "No expiry date";
+  
   const d = new Date(date);
 
   if (isPast(d)) {

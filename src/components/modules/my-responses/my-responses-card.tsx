@@ -66,16 +66,22 @@ export default function MyResponseCard({ response }: MyResponseCardProps) {
             <Badge variant="destructive">{request.urgency}</Badge>
             <Badge variant="default">{request.helpType}</Badge>
           </div>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <TypographySmall className="cursor-default text-muted-foreground">
-                {formatExpiryDate(request.expiresAt)}
-              </TypographySmall>
-            </TooltipTrigger>
-            <TooltipContent>
-              {format(new Date(request.expiresAt), "PPpp")}
-            </TooltipContent>
-          </Tooltip>
+          {request.expiresAt ? (
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <TypographySmall className="cursor-default text-muted-foreground">
+                  {formatExpiryDate(request.expiresAt)}
+                </TypographySmall>
+              </TooltipTrigger>
+              <TooltipContent>
+                {format(new Date(request.expiresAt), "PPpp")}
+              </TooltipContent>
+            </Tooltip>
+          ) : (
+            <TypographySmall className="text-muted-foreground">
+              No expiry date
+            </TypographySmall>
+          )}
         </div>
         <div className="flex items-center gap-2">
           <TypographyMuted>Your Role:</TypographyMuted>

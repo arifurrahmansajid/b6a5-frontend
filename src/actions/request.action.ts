@@ -39,8 +39,8 @@ export const getRequests = async (queryString?: string) =>
 export const getMyRequests = async (queryString?: string) =>
   safeRequest(async () => {
     const endpoint = queryString
-      ? `/requests/me?${queryString}`
-      : "/requests/me";
+      ? `/requests/my-requests?${queryString}`
+      : "/requests/my-requests";
 
     const response = await httpClient.get<IRequestResponse[]>(endpoint);
     return response;
@@ -49,8 +49,8 @@ export const getMyRequests = async (queryString?: string) =>
 export const getAllRequests = async (queryString?: string) =>
   safeRequest(async () => {
     const endpoint = queryString
-      ? `/requests/all-requests?${queryString}`
-      : "/requests/all-requests";
+      ? `/requests/all?${queryString}`
+      : "/requests/all";
 
     const response = await httpClient.get<IAllRequestResponse[]>(endpoint);
     return response;

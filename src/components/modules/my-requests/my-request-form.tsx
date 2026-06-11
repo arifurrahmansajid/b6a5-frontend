@@ -20,9 +20,10 @@ const helpTypeOptions = createOptions(HELP_TYPE);
 
 type MyRequestFormProps = {
   data?: IRequestResponse;
+  onSuccess?: () => void;
 };
 
-export default function MyRequestForm({ data }: MyRequestFormProps) {
+export default function MyRequestForm({ data, onSuccess }: MyRequestFormProps) {
   const { refresh } = useRefreshQuery([QUERY_KEY.REQUEST.MY_REQUEST]);
 
   const isUpdate = Boolean(data);
@@ -62,7 +63,10 @@ export default function MyRequestForm({ data }: MyRequestFormProps) {
       loadingMessage={messages.loading}
       successMessage={messages.success}
       errorMessage={messages.error}
-      onSuccess={async () => await refresh()}
+      onSuccess={async () => {
+        await refresh();
+        if (onSuccess) onSuccess();
+      }}
     >
       {(form) => (
         <>

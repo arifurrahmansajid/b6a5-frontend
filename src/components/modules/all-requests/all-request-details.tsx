@@ -55,7 +55,7 @@ export default function AllRequestDetails({ data }: AllRequestDetailsProps) {
           </Badge>
           <Badge variant="outline">Help Type: {data.helpType}</Badge>
           <Badge variant="outline">
-            Expires At: {format(new Date(data.expiresAt), "dd MMM yyyy")}
+            Expires At: {data.expiresAt ? format(new Date(data.expiresAt), "dd MMM yyyy") : "No expiry date"}
           </Badge>
         </div>
         <div className="mt-4">

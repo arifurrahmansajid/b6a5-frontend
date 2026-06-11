@@ -54,16 +54,22 @@ export function RequestCard({ request }: { request: IRequestResponse }) {
           {request.status}
         </Badge>
 
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <TypographySmall className="cursor-default">
-              {formatExpiryDate(request.expiresAt)}
-            </TypographySmall>
-          </TooltipTrigger>
-          <TooltipContent>
-            {format(new Date(request.expiresAt), "PPpp")}
-          </TooltipContent>
-        </Tooltip>
+        {request.expiresAt ? (
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <TypographySmall className="cursor-default">
+                {formatExpiryDate(request.expiresAt)}
+              </TypographySmall>
+            </TooltipTrigger>
+            <TooltipContent>
+              {format(new Date(request.expiresAt), "PPpp")}
+            </TooltipContent>
+          </Tooltip>
+        ) : (
+          <TypographySmall className="text-muted-foreground">
+            No expiry date
+          </TypographySmall>
+        )}
       </div>
 
       <div className="flex gap-2 mt-auto">

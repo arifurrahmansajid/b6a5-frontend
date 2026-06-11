@@ -58,7 +58,7 @@ export default function MyRequestDetails({ data }: MyRequestDetailsProps) {
             Anonymous: {data.isAnonymous ? "Yes" : "No"}
           </Badge>
           <Badge variant="outline">
-            Expires At: {format(new Date(data.expiresAt), "dd MMM yyyy")}
+            Expires At: {data.expiresAt ? format(new Date(data.expiresAt), "dd MMM yyyy") : "No expiry date"}
           </Badge>
         </div>
         <TypographyMuted className="mt-4 block text-sm">

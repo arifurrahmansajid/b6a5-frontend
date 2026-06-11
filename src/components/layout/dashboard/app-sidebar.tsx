@@ -7,11 +7,13 @@ import { SidebarFooterContent } from "./sidebar-footer-content";
 import { SidebarHeaderContent } from "./sidebar-header-content";
 import { SidebarMainContent } from "./sidebar-main-content";
 
+import { redirect } from "next/navigation";
+
 export async function AppSidebar() {
-  const { success, data, message } = await getSession();
+  const { success, data } = await getSession();
 
   if (!success || !data) {
-    throw new Error(message);
+    redirect("/sign-in");
   }
 
   const user = data.user;

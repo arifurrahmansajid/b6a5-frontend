@@ -63,6 +63,8 @@ export function MyRequestsTableToolbar<TData>({
     selectedUrgencies.size > 0 ||
     search.length > 0;
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="flex items-center justify-between">
       <div className="flex flex-1 items-center gap-2">
@@ -110,8 +112,10 @@ export function MyRequestsTableToolbar<TData>({
           mode="create"
           title="Add New Request"
           description="Fill in the details below to submit a new request."
+          open={isModalOpen}
+          onOpenChange={setIsModalOpen}
         >
-          <MyRequestForm />
+          <MyRequestForm onSuccess={() => setIsModalOpen(false)} />
         </DataTableModal>
       </div>
     </div>

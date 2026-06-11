@@ -24,7 +24,7 @@ export default function SignUpForm() {
       successMessage="Welcome to HopeLink!"
       errorMessage="Creation failed"
       className="space-y-4"
-      onSuccess={() => router.push("/verify-email")}
+      onSuccess={() => router.push("/sign-in")}
     >
       {(form) => (
         <FieldGroup className="space-y-4">

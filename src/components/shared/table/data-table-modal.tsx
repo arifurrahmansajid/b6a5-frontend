@@ -21,6 +21,8 @@ interface DataTableModalProps {
   description?: string;
   className?: string;
   children: ReactNode;
+  open?: boolean;
+  onOpenChange?: (open: boolean) => void;
 }
 
 type Mode = DataTableModalProps["mode"];
@@ -42,9 +44,11 @@ export function DataTableModal({
   description,
   className,
   children,
+  open,
+  onOpenChange,
 }: DataTableModalProps) {
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogTrigger asChild>
         <Button
           className={cn(
