@@ -9,6 +9,7 @@ import Link from "next/link";
 import React from "react";
 import { navLinks } from "./nav-links";
 import { useScroll } from "@/hooks/use-scroll";
+import { usePathname } from "next/navigation";
 
 interface MobileNavProps {
   dashboardPath: string;
@@ -16,7 +17,9 @@ interface MobileNavProps {
 
 export function MobileNav({ dashboardPath }: MobileNavProps) {
   const [open, setOpen] = React.useState(false);
-  const scrolled = useScroll(10);
+  const scrollOffset = useScroll(10);
+  const pathname = usePathname();
+  const scrolled = scrollOffset || pathname !== "/";
 
   const session = useSession();
 
@@ -53,16 +56,19 @@ export function MobileNav({ dashboardPath }: MobileNavProps) {
             data-slot={open ? "open" : "closed"}
           >
             <div className="grid gap-y-2">
-              {navLinks.map((link) => (
-                <Button
-                  asChild
-                  className="justify-start"
-                  key={link.label}
-                  variant="ghost"
-                >
-                  <Link href={link.href}>{link.label}</Link>
-                </Button>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <Button
+                    asChild
+                    className={cn("justify-start", isActive && "text-primary bg-primary/10")}
+                    key={link.label}
+                    variant={isActive ? "secondary" : "ghost"}
+                  >
+                    <Link href={link.href}>{link.label}</Link>
+                  </Button>
+                );
+              })}
             </div>
             <div className="mt-12 flex flex-col gap-2">
               {session ? (

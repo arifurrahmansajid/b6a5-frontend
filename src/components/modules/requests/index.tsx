@@ -17,7 +17,7 @@ export default async function Requests({
   );
 
   return (
-    <div className="max-w-(--breakpoint-xl) mx-auto px-4 sm:px-6 py-8 space-y-7">
+    <div className="max-w-(--breakpoint-xl) mx-auto px-4 sm:px-6 pt-28 pb-8 space-y-7">
       <RequestsHeader />
       <RequestsFilters />
       <HydrationBoundary state={dehydratedState}>

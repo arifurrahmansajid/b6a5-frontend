@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowUpRight, LayoutDashboard, LogOut, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useScroll } from "@/hooks/use-scroll";
+import { usePathname, useRouter } from "next/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -15,7 +16,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { singOutUser } from "@/actions/auth-actions";
-import { useRouter } from "next/navigation";
 
 interface HeaderCTAProps {
   dashboardPath: string;
@@ -23,8 +23,11 @@ interface HeaderCTAProps {
 
 export function HeaderCTA({ dashboardPath }: HeaderCTAProps) {
   const session = useSession();
-  const scrolled = useScroll(10);
+  const scrollOffset = useScroll(10);
+  const pathname = usePathname();
   const router = useRouter();
+
+  const scrolled = scrollOffset || pathname !== "/";
 
   const buttonClass = "rounded-lg font-bold bg-[#F9D362] hover:bg-[#eec13c] text-black border-none shadow-lg px-6 flex items-center gap-2 transition-all hover:scale-105 active:scale-95";
 

@@ -9,7 +9,7 @@ import { env } from "../../../../env";
 
 export default function Contact() {
   return (
-    <div className="relative min-h-screen bg-background text-foreground overflow-hidden py-24 px-6">
+    <div className="relative min-h-screen bg-background text-foreground overflow-hidden pt-32 pb-24 px-6">
       {/* Background Decor */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-20"
         style={{

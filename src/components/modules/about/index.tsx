@@ -14,7 +14,7 @@ export default function About() {
   return (
     <div className="bg-background text-foreground overflow-hidden">
       {/* About Hero Section */}
-      <section className="relative min-h-[65vh] flex items-center pb-16 px-6 max-w-7xl mx-auto">
+      <section className="relative min-h-[65vh] flex items-center pt-24 pb-16 px-6 max-w-7xl mx-auto">
         {/* Background Grid & Glow */}
         <div className="absolute inset-0 z-0 pointer-events-none opacity-20"
           style={{

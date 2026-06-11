@@ -3,13 +3,19 @@
 import { useScroll } from "@/hooks/use-scroll";
 import { cn } from "@/lib/utils";
 import React from "react";
+import { usePathname } from "next/navigation";
 
 export default function AnimatedHeader({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const scrolled = useScroll(10);
+  const scrollOffset = useScroll(10);
+  const pathname = usePathname();
+  
+  // If we are not on the homepage, always treat the header as scrolled
+  // so it has a solid background and visible text.
+  const scrolled = scrollOffset || pathname !== "/";
 
   return (
     <header

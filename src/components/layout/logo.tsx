@@ -4,9 +4,12 @@ import { Heart } from "lucide-react";
 import Link from "next/link";
 import { env } from "../../../env";
 import { useScroll } from "@/hooks/use-scroll";
+import { usePathname } from "next/navigation";
 
 export const Logo = () => {
-  const scrolled = useScroll(10);
+  const scrollOffset = useScroll(10);
+  const pathname = usePathname();
+  const scrolled = scrollOffset || pathname !== "/";
   
   return (
     <Link
