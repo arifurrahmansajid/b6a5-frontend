@@ -41,9 +41,9 @@ export const allResponsesTableColumns: ColumnDef<IResponses>[] = [
     ),
     cell: ({ row }) => (
       <div className="flex flex-col">
-        <span className="font-medium">{row.original.user.name}</span>
+        <span className="font-medium">{row.original.user?.name ?? "—"}</span>
         <span className="text-sm text-muted-foreground">
-          {row.original.user.email}
+          {row.original.user?.email ?? "—"}
         </span>
       </div>
     ),
@@ -55,7 +55,7 @@ export const allResponsesTableColumns: ColumnDef<IResponses>[] = [
     ),
     cell: ({ row }) => (
       <span className="max-w-125 truncate font-medium">
-        {row.original.request.title}
+        {row.original.request?.title ?? "—"}
       </span>
     ),
   },
@@ -85,7 +85,7 @@ export const allResponsesTableColumns: ColumnDef<IResponses>[] = [
   },
   {
     id: "request.urgency",
-    accessorFn: (row) => row.request.urgency,
+    accessorFn: (row) => row.request?.urgency,
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Urgency" />
     ),
@@ -110,7 +110,7 @@ export const allResponsesTableColumns: ColumnDef<IResponses>[] = [
   },
   {
     id: "request.status",
-    accessorFn: (row) => row.request.status,
+    accessorFn: (row) => row.request?.status,
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Request Status" />
     ),
@@ -141,9 +141,9 @@ export const allResponsesTableColumns: ColumnDef<IResponses>[] = [
     ),
     cell: ({ row }) => (
       <div className="flex flex-col">
-        <span className="font-medium">{row.original.request.creator.name}</span>
+        <span className="font-medium">{row.original.request?.creator?.name ?? "—"}</span>
         <span className="text-sm text-muted-foreground">
-          {row.original.request.creator.email}
+          {row.original.request?.creator?.email ?? "—"}
         </span>
       </div>
     ),
