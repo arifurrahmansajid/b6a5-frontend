@@ -42,7 +42,7 @@ export const donationTableColumns: ColumnDef<IDonationResponse>[] = [
     ),
     cell: ({ row }) => (
       <span className="max-w-125 truncate font-medium">
-        {row.original.request.title}
+        {row.original.request?.title ?? "—"}
       </span>
     ),
   },
@@ -53,9 +53,9 @@ export const donationTableColumns: ColumnDef<IDonationResponse>[] = [
     ),
     cell: ({ row }) => (
       <div className="flex flex-col">
-        <span className="font-medium">{row.original.donor.name}</span>
+        <span className="font-medium">{row.original.donor?.name ?? "—"}</span>
         <span className="text-sm text-muted-foreground">
-          {row.original.donor.email}
+          {row.original.donor?.email ?? "—"}
         </span>
       </div>
     ),
@@ -69,7 +69,7 @@ export const donationTableColumns: ColumnDef<IDonationResponse>[] = [
       <span className="font-medium">
         {new Intl.NumberFormat("en-US", {
           style: "currency",
-          currency: row.original.currency,
+          currency: (row.original as any).currency ?? "USD",
         }).format(Number(row.original.amount))}
       </span>
     ),
