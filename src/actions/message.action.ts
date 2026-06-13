@@ -5,6 +5,12 @@ import { httpClient } from "@/lib/http-client";
 import { IMessageResponse, TMessageConversation } from "@/types/message.type";
 import { safeRequest } from "@/utils/safe-request";
 import { validatePayload } from "@/utils/validation-util";
+import z from "zod";
+
+const updateMessageSchema = z.object({
+  message: z.string().min(1).max(1000),
+});
+
 
 export const createMessage = async (payload: Record<string, unknown>) =>
   safeRequest(async () => {
@@ -45,7 +51,7 @@ export const updateMessage = async (
   payload: Record<string, unknown>,
 ) =>
   safeRequest(async () => {
-    const result = validatePayload(payload, createMessageSchema);
+    const result = validatePayload(payload, updateMessageSchema);
     if (!result.success) return result;
 
     const response = await httpClient.patch<IMessageResponse>(
