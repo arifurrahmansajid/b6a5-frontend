@@ -105,7 +105,7 @@ export default function MessageConversation({
                     showIcon={false}
                     showSeparator={false}
                     id={msg.id}
-                    label={msg.message}
+                  label={msg.content ?? msg.message}
                     queryKey={QUERY_KEY.RESPONSE.MY_RESPONSES}
                     deleteFun={deleteMessage}
                   />
@@ -114,7 +114,7 @@ export default function MessageConversation({
                   variant={isSender ? "default" : "secondary"}
                   className="whitespace-pre-wrap h-auto"
                 >
-                  {msg.message}
+                  {msg.content ?? msg.message}
                 </Badge>
               </div>
               <div className="flex items-center gap-2 mt-1">

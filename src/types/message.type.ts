@@ -6,6 +6,7 @@ export type TMessagePayload = z.infer<typeof createMessageSchema>;
 export interface IMessageResponse extends TMessagePayload {
   id: string;
   senderId: string;
+  content: string;
   isRead: boolean;
   createdAt: string;
 }
