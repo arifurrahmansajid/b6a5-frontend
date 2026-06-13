@@ -180,7 +180,7 @@ const getTokens = async () => {
 
 const getAccessTokenInfo = (token?: string) => {
   const { success, data } = token
-    ? jwtUtils.verifyToken(token, env.ACCESS_TOKEN_SECRET)
+    ? jwtUtils.verifyToken(token)
     : {};
 
   return { decoded: data, isValid: success };
