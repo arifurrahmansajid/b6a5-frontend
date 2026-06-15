@@ -105,17 +105,7 @@ export function SidebarFooterContent({
                   </div>
                 </div>
               </DropdownMenuLabel>
-              <DropdownMenuGroup>
-                <DropdownMenuItem>
-                  <BadgeCheckIcon />
-                  Account
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <BellIcon />
-                  Notifications
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-              <DropdownMenuSeparator />
+
               <DropdownMenuItem onClick={handleSingOut}>
                 <LogOutIcon />
                 Sing Out
