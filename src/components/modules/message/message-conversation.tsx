@@ -185,12 +185,15 @@ export default function MessageConversation({
                       />
                     </>
                   )}
-                  <Badge
-                    variant={isSender ? "default" : "secondary"}
-                    className="whitespace-pre-wrap h-auto"
+                  <div
+                    className={`px-4 py-2 rounded-2xl text-sm whitespace-pre-wrap break-words ${
+                      isSender
+                        ? "bg-primary text-primary-foreground rounded-tr-sm"
+                        : "bg-muted text-foreground rounded-tl-sm"
+                    }`}
                   >
                     {msgText}
-                  </Badge>
+                  </div>
                 </div>
               )}
               <div className="flex items-center gap-2 mt-1">

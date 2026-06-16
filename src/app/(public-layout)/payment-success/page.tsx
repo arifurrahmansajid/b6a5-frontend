@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Suspense } from "react";
 
 import { TypographyH2, TypographyP } from "@/components/shared/typography";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { PaymentSuccessClient } from "./payment-success-client";
 
 export default function DonorPaymentSuccessPage() {
   return (
@@ -31,6 +33,10 @@ export default function DonorPaymentSuccessPage() {
           </Button>
         </CardContent>
       </Card>
+      
+      <Suspense fallback={null}>
+        <PaymentSuccessClient />
+      </Suspense>
     </section>
   );
 }

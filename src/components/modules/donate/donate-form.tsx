@@ -66,7 +66,7 @@ export default function DonateForm({ requestId, campaignId }: DonateFormProps) {
           setPaymentError("");
 
           const paymentRes = await initiateDonationPayment(data.id, {
-            successUrl: PAYMENT_CALLBACK_URL.SUCCESS,
+            successUrl: `${PAYMENT_CALLBACK_URL.SUCCESS}?donationId=${data.id}`,
             cancelUrl: PAYMENT_CALLBACK_URL.CANCEL,
           });
 
