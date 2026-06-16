@@ -1,4 +1,5 @@
-# Ummah Care Frontend
+# HopeLink
+ Frontend
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.2.1-black)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2.4-blue)](https://reactjs.org/)
